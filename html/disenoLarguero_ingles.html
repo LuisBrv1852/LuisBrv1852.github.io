@@ -29,10 +29,10 @@
 
   <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
 
-   <!--Codigo para anuncios-->
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
-   crossorigin="anonymous"></script>
-   <!--Codigo para anuncios-->
+  <!--Codigo para anuncios-->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
+    crossorigin="anonymous"></script>
+  <!--Codigo para anuncios-->
 
 </head>
 
@@ -59,7 +59,7 @@
       </div>
     </div>
     <div class="set-menu">
-      <p>Select the color</p>
+      <p>Selecciona el color</p>
       <div class="color-bar" data-toggle="selected">
         <span class="color-item bg-theme-red selected" data-class="theme-red"></span>
         <span class="color-item bg-theme-blue" data-class="theme-blue"></span>
@@ -71,7 +71,7 @@
     </div>
   </div>
 
-  <div class="vg-page page-home" id="home" style="background-image: url(../assets/img/banner_cimentacion.jpg)">
+  <div class="vg-page page-home" id="home" style="background-image: url(../assets/img/banner_acero.jpeg)">
     <!-- Navbar -->
     <div class="navbar navbar-expand-lg navbar-dark sticky" data-offset="500">
       <div class="container">
@@ -84,15 +84,13 @@
             <li class="nav-item active">
               <a href="../index_ingles.html" class="nav-link" data-animate="scrolling">Home</a>
             </li>
-          </ul>
-          <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a href="aplicacionesweb_ingles.html" class="nav-link" data-animate="scrolling">Web Apps</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a href="disenoZapata.html" class="nav-link" data-animate="scrolling">Español</a>
+              <a href="disenoLarguero.html" class="nav-link" data-animate="scrolling">Español</a>
             </li>
           </ul>
 
@@ -101,8 +99,9 @@
     </div> <!-- End Navbar -->
     <!-- Caption header -->
     <div class="caption-header text-center wow zoomInDown">
-      <h5 class="fw-normal">Web aplication</h5>
-      <h1 class="fw-light mb-4">Concrete isolated footing <b class="fg-theme">Design</b> </h1>
+      <h5 class="fw-normal">Web App</h5>
+      <h1 class="fw-light mb-4">Design of <b class="fg-theme">stringers W</b> </h1>
+      <h1 class="fw-light mb-4">(Secondary <b class="fg-theme">beams)</b> </h1>
       <div class="badge">Follow the instructions </div>
     </div> <!-- End Caption header -->
     <div class="floating-button"><span class="ti-mouse"></span></div>
@@ -111,145 +110,116 @@
   <div class="vg-page page-about" id="about">
     <h3 class="text-center">Fill in all the blanks</h3>
     <div class="text-center">
-      <label for="editText_nombre_proyecto">Project's name:</label>
-      <input type="text" id="nombreProy" class="form-control" placeholder="Ingrese el nombre del proyecto">
-      <label for="TextNum_num_trabe">Footing Number:</label>
-      <input type="number" id="numTrabe" class="form-control" placeholder="Ingrese el número de Zapata">
-      <img src="/assets/img/zapatas.png" alt=""><br>
-      <label for="perfil">Select a type of shoe:</label>
-      <select id="tipoZapata">
-        <option value="0">Select</option>
-        <option value="1">Center</option>
-        <option value="2">Edge</option>
-        <option value="3">Corner</option>
+      <label for="editText_nombre_proyecto">Project Name:</label>
+      <input type="text" id="nombreProy" class="form-control" placeholder="Enter the project name">
+      <label for="TextNum_num_trabe">Beam Number:</label>
+      <input type="number" id="numTrabe" class="form-control" placeholder="Enter the beam number">
+
+      <h5>Loads</h5><br>
+      <p>Enter the dead load and live load, or alternatively enter the service load, and select a load factor</p>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_mumas">Dead Load (CM):</label>
+          <input type="number" id="CM" class="form-control" placeholder="kg/m2">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_mumenos">Live Load (CV):</label>
+          <input type="number" id="CV" class="form-control" placeholder="kg/m2">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_mumas">Service Load (CS):</label>
+          <input type="number" id="CS" class="form-control" placeholder="kg/m2">
+        </div>
+      </div>
+      <label for="perfil">Select the load factor:</label>
+      <select id="tipoEstructura">
+        <option value="0">Select the type of structure</option>
+        <option value="1">Structure A CU= 1.5CM + 1.7CV or LF= 1.6CS</option>
+        <option value="2">Structure B CU= 1.3CM + 1.5CV or LF= 1.4CS</option>
       </select>
 
-
+      <h5>Dimensions</h5><br>
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_FC">Charge Factor (C.F.):</label>
-          <input type="number" id="FC" class="form-control" placeholder="1.6 is recommended for type A structure or 1.4 for type B structure">
-        </div>      
-      </div>
-
-
-      <div class="row">
-        <div class="col-md-6">
-          <label for="txtDec_h">Thickness (h):</label>
-          <input type="number" id="h" class="form-control" placeholder="Thickness in m (minimum 0.15)">
+          <label for="txtDec_fy">Length (L):</label>
+          <input type="number" id="L" class="form-control" placeholder="L in m">
         </div>
         <div class="col-md-6">
-          <label for="txtDec_r">Covering (r):</label>
-          <input type="number" id="r" class="form-control" placeholder="Covering in m">
+          <label for="txtDec_fy">Girder Spacing (Sep):</label>
+          <input type="number" id="Sep" class="form-control" placeholder="Sep in m">
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_B">X Shoe Dimension(B):</label>
-          <input type="number" id="B" class="form-control" placeholder="B en m">
+          <label for="txtDec_fy">Slab Thickness (tc):</label>
+          <input type="number" id="tc" class="form-control" placeholder="tc in cm, e.g., 8.12 cm">
         </div>
         <div class="col-md-6">
-          <label for="txtDec_L">Y Shoe Dimension(L):</label>
-          <input type="number" id="L" class="form-control" placeholder="L en m">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <label for="txtDec_dadoX">Dimension of the foundation die in X:</label>
-          <input type="number" id="dadoX" class="form-control" placeholder=" m">
-        </div>
-        <div class="col-md-6">
-          <label for="txtDec_DadoY">Dimension of the foundation die in Y:</label>
-          <input type="number" id="dadoY" class="form-control" placeholder=" m">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <label for="txtDec_f1c">f'c:</label>
+          <label for="txtDec_fy">f'c:</label>
           <input type="number" id="f1c" class="form-control" placeholder="f'c in kg/cm2">
         </div>
+      </div>
 
+      <label for="perfil">Select a profile:</label>
+      <select id="perfil"></select>
+
+      <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_fy">fy:</label>
-          <input type="number" id="fy" class="form-control" placeholder="Fy in kg/cm2">
+          <label for="txtDec_h">Height (d):</label>
+          <input type="number" id="d" class="form-control" placeholder="Height in cm">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_b">Width (bf):</label>
+          <input type="number" id="bf" class="form-control" placeholder="Width in cm">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_b">Flange Thickness (tf):</label>
+          <input type="number" id="tf" class="form-control" placeholder="tf in cm">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_b">Web Thickness (tw):</label>
+          <input type="number" id="tw" class="form-control" placeholder="tw in cm">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_b">Area (A):</label>
+          <input type="number" id="A" class="form-control" placeholder="A in cm">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_b">fy:</label>
+          <input type="number" id="fy" class="form-control" placeholder="fy in kg/cm2">
         </div>
       </div>
 
       <br>
-      <h5>Mechanical data</h5><br>
+      <h5>Mechanical Data</h5><br>
+      <p>If the dead load, live load, or service load were not filled, you can write the ultimate moment below</p><br>
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_msx">Service moment in X/parallel to the Y axis (Msx):</label>
-          <input type="number" id="msx" class="form-control" placeholder="ton-m">
-        </div>
-        <div class="col-md-6">
-          <label for="txtDec_msy">Service moment in Y/parallel to the X axis (Msy):</label>
-          <input type="number" id="msy" class="form-control" placeholder="ton-m">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <label for="txtDec_ps">Service axial load (PS):</label>
-          <input type="number" id="ps" class="form-control" placeholder="ton">
+          <label for="txtDec_mumas">Ultimate Moment (Mu):</label>
+          <input type="number" id="muMas" class="form-control" placeholder="ton-m">
         </div>
       </div>
 
-      <br>
-      <h5>Soil data</h5><br>
-      <div class="row">
-        <div class="col-md-6">
-          <label for="txtDec_Df">Offset depth (Df):</label>
-          <input type="number" id="Df" class="form-control" placeholder="m">
-        </div>
-        <div class="col-md-6">
-          <label for="txtDec_qu">Ultimate soil capacity (qu):</label>
-          <input type="number" id="qu" class="form-control" placeholder="ton/m2">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <label for="txtDec_densidad">Density or volumetric weight of the soil:</label>
-          <input type="number" id="densidadSuelo" class="form-control" placeholder="ton/m3">
-        </div>    
-      </div>
-
-      <br>
-      <h5>Reinforcing steel</h5><br>
-      <div class="row">
-        <div class="col-md-6">
-          <label for="txtDec_VarillaFelxion">For bending using rod number:</label>
-          <input type="number" id="varillaFlexion" class="form-control" placeholder="3 to 8">
-        </div>
-        <div class="col-md-6">
-          <label for="txtDec_VarillaTemperatura">For temperature using number rod:</label>
-          <input type="number" id="varillaTemperatura" class="form-control" placeholder="3 to 8">
-        </div>
-      </div>
-
-      
-
-      <button id="btnRevisar" onclick="revisarZapata()" class="btn btn-theme mt-3 wow fadeInUp ml-1"
-        target="_blank">Review</button>
+      <button id="btnRevisar" onclick="revisarVigaSecundariaIngles()" class="btn btn-theme mt-3 wow fadeInUp ml-1">Review</button>
 
       <br><br><br>
-      <h5>Results</h5><br>  
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <label for="txtDec_resultados" id="labelResultados">___</label>
-          </div>
+      <h5>Results</h5><br>
+      <div class="row">
+        <div class="col-md-12">
+          <label for="txtDec_resultados" id="labelResultado">___</label>
         </div>
       </div>
-      <br>
-
-
     </div>
+</div>
 
-  </div>
-  </div>
 
 
 
@@ -269,7 +239,7 @@
         </div>-->
         <div class="col-md-6 col-lg-3 py-3 mx-auto">
           <div class="float-lg-right">
-            <p>Follow us</p>
+            <p>Follow Us</p>
             <hr class="divider">
             <ul class="list-unstyled">
               <li><a href="https://wa.me/527712971094" target="_blank">Whatsapp</a></li>
@@ -281,7 +251,7 @@
         </div>
         <div class="col-md-6 col-lg-3 py-3 mx-auto">
           <div class="float-lg-right">
-            <p>Contactanos</p>
+            <p>Contact Us</p>
             <hr class="divider">
             <ul class="list-unstyled">
               <li>engineeringcode.17@gmail.com</li>
@@ -295,14 +265,50 @@
       </div>
       <div class="row justify-content-center mt-3">
         <div class="col-12">
-          <p class="text-center mb-0 mt-4">Copyright &copy;2024. All rights reserved <a
+          <p class="text-center mb-0 mt-4">Copyright &copy;2024. All rigths reserved <a
               href="https://www.macodeid.com/"></a></p>
         </div>
       </div>
     </div>
   </div> <!-- End footer -->
 
-  <script src="../assets/js/disenozapata_ingles.obfuscated.js"></script>
+  <!--Scipt para llenar el spinner y llenar espacios automaticamente-->
+  <script>
+    // Carga del archivo JSON
+    fetch('../assets/bd/vigasW.json')
+      .then(response => response.json())
+      .then(data => {
+        // Obtención del select y div donde se mostrarán los datos
+        const selectPerfil = document.getElementById('perfil');
+        const divDatos = document.getElementById('datos');
+
+        // Iteración sobre los objetos en el JSON
+        data.forEach(perfil => {
+          // Creación de una opción para cada perfil en el select
+          const option = document.createElement('option');
+          option.text = perfil.Nombre;
+          option.value = perfil.id;
+          selectPerfil.appendChild(option);
+        });
+
+        // Evento de cambio para el select, llenado de espacios 
+        selectPerfil.addEventListener('change', () => {
+          // Obtención del perfil seleccionado
+          const perfilSeleccionado = data.find(perfil => perfil.id == selectPerfil.value);
+
+          // Llenar los campos con los datos del perfil seleccionado
+          document.getElementById('d').value = perfilSeleccionado.d;
+          document.getElementById('bf').value = perfilSeleccionado.bf;
+          document.getElementById('tf').value = perfilSeleccionado.tf;
+          document.getElementById('tw').value = perfilSeleccionado.tw;
+          document.getElementById('A').value = perfilSeleccionado.Area;
+          
+        });
+      })
+      .catch(error => console.error('Error cargando el archivo JSON:', error));
+  </script>
+
+  <script src="../assets/js/largueros.obfuscated.js"></script>
 
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
 

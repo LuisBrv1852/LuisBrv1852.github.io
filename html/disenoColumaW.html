@@ -90,7 +90,7 @@
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a href="disenoViga_ingles.html" class="nav-link" data-animate="scrolling">English</a>
+              <a href="disenoColumaW_ingles.html" class="nav-link" data-animate="scrolling">English</a>
             </li>
           </ul>
 
@@ -100,7 +100,7 @@
     <!-- Caption header -->
     <div class="caption-header text-center wow zoomInDown">
       <h5 class="fw-normal">Aplicación web</h5>
-      <h1 class="fw-light mb-4">Diseño de vigas de <b class="fg-theme">Acero W</b> </h1>
+      <h1 class="fw-light mb-4">Diseño de columnas <b class="fg-theme">de Acero W</b> </h1>
       <div class="badge">Sigue las instrucciones </div>
     </div> <!-- End Caption header -->
     <div class="floating-button"><span class="ti-mouse"></span></div>
@@ -152,12 +152,45 @@
 
       <div class="row">
         <div class="col-md-6">
+          <label for="txtDec_r">Inercia en X (Ix):</label>
+          <input type="number" id="Ix" class="form-control" placeholder="Inercia en cm4">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_f1c">Módulos elástico en y(Sy):</label>
+          <input type="number" id="Sy" class="form-control" placeholder="Modulo en cm3">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
           <label for="txtDec_r">Módulos plástico en x(Zx):</label>
           <input type="number" id="Zx" class="form-control" placeholder="Modulo en cm3">
         </div>
         <div class="col-md-6">
           <label for="txtDec_f1c">Constante de torsión(J):</label>
           <input type="number" id="J" class="form-control" placeholder="Constante en cm4">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_r">Módulos plástico en Y(Zy):</label>
+          <input type="number" id="Zy" class="form-control" placeholder="Modulo en cm3">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_f1c">Radio de giro en X(rx):</label>
+          <input type="number" id="rx" class="form-control" placeholder="Constante en cm">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_r">Area de la sección(At):</label>
+          <input type="number" id="At" class="form-control" placeholder="Modulo en cm3">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_f1c">Radio de giro en Y(ry):</label>
+          <input type="number" id="ry" class="form-control" placeholder="Constante en cm">
         </div>
       </div>
 
@@ -175,12 +208,23 @@
 
       <div class="row">
         <div class="col-md-6">
+          <label for="txtDec_fy">Factor de longitud de pandeo (k):</label>
+          <input type="number" id="k" class="form-control" placeholder="1">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_fy">Factor n para el calculo de esfuerzo en compresión:</label>
+          <input type="number" id="n" class="form-control" placeholder="1.4">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
           <label for="txtDec_fy">cb:</label>
           <input type="number" id="cb" class="form-control" placeholder="1">
         </div>
         <div class="col-md-6">
           <label for="txtDec_fy">fy:</label>
-          <input type="number" id="fy" class="form-control" placeholder="Fy en kg/cm2">
+          <input type="number" id="fy" class="form-control" placeholder="Fy en kg/cm2, 3515kg/cm2">
         </div>
       </div>
 
@@ -194,35 +238,53 @@
       <br>
       <h5>Datos mecanicos</h5><br>
       <div class="row">
+        <div class="col-md-12">
+          <label for="txtDec_mumas">Carga Axial (Pu):</label>
+          <input type="number" id="Pu" class="form-control" placeholder="Ton">
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_mumas">Momento (Mu) max:</label>
-          <input type="number" id="muMas" class="form-control" placeholder="ton-m">
+          <label for="txtDec_mumas">Momento maximo alrededor del eje X (MuX):</label>
+          <input type="number" id="Mux" class="form-control"
+            placeholder="Momento alrededor del eje X o paralelo al eje Y en ton-m">
         </div>
         <div class="col-md-6">
-          <label for="txtDec_mumenos">Momento (Mu) menor:</label>
-          <input type="number" id="muMenos" class="form-control" placeholder="ton-m">
+          <label for="txtDec_mumenos">Momento maximo alrededor del eje Y (MuY):</label>
+          <input type="number" id="Muy" class="form-control"
+            placeholder="Momento alrededor del eje Y o paralelo al eje X en ton-m">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_mumas">Momento minimo alrededor del eje X (MuX):</label>
+          <input type="number" id="Muxmin" class="form-control"
+            placeholder="Momento alrededor del eje X o paralelo al eje Y en ton-m">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_mumenos">Momento minimo alrededor del eje Y (MuY):</label>
+          <input type="number" id="Muymin" class="form-control"
+            placeholder="Momento alrededor del eje Y o paralelo al eje X en ton-m">
         </div>
       </div>
 
 
-
-      <button id="btnRevisar" onclick="revisionViga()" class="btn btn-theme mt-3 wow fadeInUp ml-1">Revisar</button>
+      <button id="btnRevisar" onclick="revisarColumnaW()" class="btn btn-theme mt-3 wow fadeInUp ml-1">Revisar</button>
 
       <br><br><br>
       <h5>Resultados</h5><br>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <label for="txtDec_resultados" id="labelResultado">___</label>
         </div>
-        <div class="col-md-6">
-          <label for="txtDec_resultados" id="labelResultado2">___</label>
-        </div>
+
       </div>
 
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
-            <label for="txtDec_resultados" id="labelResultadoCortante">___</label>
+          <div class="col-md-12">
+            <label for="txtDec_resultados" id="labelResultado2">___</label>
           </div>
         </div>
       </div>
@@ -232,7 +294,7 @@
     </div>
 
   </div>
-  
+
 
 
 
@@ -315,19 +377,25 @@
           document.getElementById('tf').value = perfilSeleccionado.tf;
           document.getElementById('tw').value = perfilSeleccionado.tw;
           document.getElementById('Iy').value = perfilSeleccionado.Iy;
+          document.getElementById('Ix').value = perfilSeleccionado.Ix;
           document.getElementById('Sx').value = perfilSeleccionado.Sx;
+          document.getElementById('Sy').value = perfilSeleccionado.Sy;
           document.getElementById('Zx').value = perfilSeleccionado.Zx;
+          document.getElementById('Zy').value = perfilSeleccionado.Zy;
+          document.getElementById('rx').value = perfilSeleccionado.rx;
+          document.getElementById('ry').value = perfilSeleccionado.ry;
+          document.getElementById('At').value = perfilSeleccionado.Area;
           document.getElementById('J').value = perfilSeleccionado.J;
           document.getElementById('Ca').value = perfilSeleccionado.Ca;
           document.getElementById('G').value = perfilSeleccionado.G;
           document.getElementById('cb').value = perfilSeleccionado.cb;
-          document.getElementById('fy').value = perfilSeleccionado.fy;
+         
         });
       })
       .catch(error => console.error('Error cargando el archivo JSON:', error));
   </script>
 
-  <script src="../assets/js/disenoviga.obfuscated.js"></script>
+  <script src="../assets/js/columnasW.obfuscated.js"></script>
 
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
 

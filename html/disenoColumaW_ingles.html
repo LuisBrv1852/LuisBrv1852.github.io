@@ -82,15 +82,15 @@
         <div class="collapse navbar-collapse" id="main-navbar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a href="../index.html" class="nav-link" data-animate="scrolling">Principal</a>
+              <a href="../index_ingles.html" class="nav-link" data-animate="scrolling">Home</a>
             </li>
             <li class="nav-item active">
-              <a href="aplicacionesweb.html" class="nav-link" data-animate="scrolling">Programas</a>
+              <a href="aplicacionesweb_ingles.html" class="nav-link" data-animate="scrolling">Web Apps</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a href="disenoViga_ingles.html" class="nav-link" data-animate="scrolling">English</a>
+              <a href="disenoColumaW.html" class="nav-link" data-animate="scrolling">Español</a>
             </li>
           </ul>
 
@@ -99,77 +99,121 @@
     </div> <!-- End Navbar -->
     <!-- Caption header -->
     <div class="caption-header text-center wow zoomInDown">
-      <h5 class="fw-normal">Aplicación web</h5>
-      <h1 class="fw-light mb-4">Diseño de vigas de <b class="fg-theme">Acero W</b> </h1>
-      <div class="badge">Sigue las instrucciones </div>
+      <h5 class="fw-normal">Web App</h5>
+      <h1 class="fw-light mb-4">W Steel <b class="fg-theme">Column Design</b> </h1>
+      <div class="badge">Follow the instructions</div>
     </div> <!-- End Caption header -->
     <div class="floating-button"><span class="ti-mouse"></span></div>
   </div>
 
   <div class="vg-page page-about" id="about">
-    <h3 class="text-center">Llena todos los espacios en blanco</h3>
+    <h3 class="text-center">Fill in all the blanks</h3>
     <div class="text-center">
-      <label for="editText_nombre_proyecto">Nombre del Proyecto:</label>
-      <input type="text" id="nombreProy" class="form-control" placeholder="Ingrese el nombre del proyecto">
-      <label for="TextNum_num_trabe">Número de Viga:</label>
-      <input type="number" id="numTrabe" class="form-control" placeholder="Ingrese el número de trabe">
-      <label for="perfil">Selecciona un perfil:</label>
+      <label for="editText_nombre_proyecto">Project Name:</label>
+      <input type="text" id="nombreProy" class="form-control" placeholder="Enter the project name">
+      <label for="TextNum_num_trabe">Beam Number:</label>
+      <input type="number" id="numTrabe" class="form-control" placeholder="Enter the beam number">
+      <label for="perfil">Select a profile:</label>
       <select id="perfil"></select>
 
 
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_h">Altura (d):</label>
-          <input type="number" id="d" class="form-control" placeholder="Altura en cm">
+          <label for="txtDec_h">Height (d):</label>
+          <input type="number" id="d" class="form-control" placeholder="Height in cm">
         </div>
         <div class="col-md-6">
-          <label for="txtDec_b">Ancho (bf):</label>
-          <input type="number" id="bf" class="form-control" placeholder="Ancho en cm">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <label for="txtDec_r">Espesor patin (tf):</label>
-          <input type="number" id="tf" class="form-control" placeholder="Espesor en cm">
-        </div>
-        <div class="col-md-6">
-          <label for="txtDec_f1c">Espesor Alma (tw):</label>
-          <input type="number" id="tw" class="form-control" placeholder="Espesor en cm">
+          <label for="txtDec_b">Width (bf):</label>
+          <input type="number" id="bf" class="form-control" placeholder="Width in cm">
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_r">Inercia en Y (Iy):</label>
-          <input type="number" id="Iy" class="form-control" placeholder="Inercia en cm4">
+          <label for="txtDec_r">Flange Thickness (tf):</label>
+          <input type="number" id="tf" class="form-control" placeholder="Thickness in cm">
         </div>
         <div class="col-md-6">
-          <label for="txtDec_f1c">Módulos elástico en x(Sx):</label>
-          <input type="number" id="Sx" class="form-control" placeholder="Modulo en cm3">
+          <label for="txtDec_f1c">Web Thickness (tw):</label>
+          <input type="number" id="tw" class="form-control" placeholder="Thickness in cm">
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_r">Módulos plástico en x(Zx):</label>
-          <input type="number" id="Zx" class="form-control" placeholder="Modulo en cm3">
+          <label for="txtDec_r">Moment of Inertia in Y (Iy):</label>
+          <input type="number" id="Iy" class="form-control" placeholder="Inertia in cm4">
         </div>
         <div class="col-md-6">
-          <label for="txtDec_f1c">Constante de torsión(J):</label>
-          <input type="number" id="J" class="form-control" placeholder="Constante en cm4">
+          <label for="txtDec_f1c">Elastic Modulus in X (Sx):</label>
+          <input type="number" id="Sx" class="form-control" placeholder="Modulus in cm3">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_r">Moment of Inertia in X (Ix):</label>
+          <input type="number" id="Ix" class="form-control" placeholder="Inertia in cm4">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_f1c">Elastic Modulus in Y (Sy):</label>
+          <input type="number" id="Sy" class="form-control" placeholder="Modulus in cm3">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_r">Plastic Modulus in X (Zx):</label>
+          <input type="number" id="Zx" class="form-control" placeholder="Modulus in cm3">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_f1c">Torsion Constant (J):</label>
+          <input type="number" id="J" class="form-control" placeholder="Constant in cm4">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_r">Plastic Modulus in Y (Zy):</label>
+          <input type="number" id="Zy" class="form-control" placeholder="Modulus in cm3">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_f1c">Radius of Gyration in X (rx):</label>
+          <input type="number" id="rx" class="form-control" placeholder="Constant in cm">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_r">Section Area (At):</label>
+          <input type="number" id="At" class="form-control" placeholder="Modulus in cm3">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_f1c">Radius of Gyration in Y (ry):</label>
+          <input type="number" id="ry" class="form-control" placeholder="Constant in cm">
         </div>
       </div>
 
 
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_r">Constante de torsión de alabeo(Ca):</label>
-          <input type="number" id="Ca" class="form-control" placeholder="Constante en cm4">
+          <label for="txtDec_r">Warping Torsion Constant (Ca):</label>
+          <input type="number" id="Ca" class="form-control" placeholder="Constant in cm4">
         </div>
         <div class="col-md-6">
-          <label for="txtDec_f1c">Módulo de Cortante(G)</label>
+          <label for="txtDec_f1c">Shear Modulus (G):</label>
           <input type="number" id="G" class="form-control" placeholder="784000 kg/cm2">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_fy">Buckling Length Factor (k):</label>
+          <input type="number" id="k" class="form-control" placeholder="1">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_fy">n Factor for Compression Stress Calculation:</label>
+          <input type="number" id="n" class="form-control" placeholder="1.4">
         </div>
       </div>
 
@@ -180,49 +224,67 @@
         </div>
         <div class="col-md-6">
           <label for="txtDec_fy">fy:</label>
-          <input type="number" id="fy" class="form-control" placeholder="Fy en kg/cm2">
+          <input type="number" id="fy" class="form-control" placeholder="Fy in kg/cm2, 3515 kg/cm2">
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_fy">Longitud(L):</label>
-          <input type="number" id="L" class="form-control" placeholder="L en m">
+          <label for="txtDec_fy">Length (L):</label>
+          <input type="number" id="L" class="form-control" placeholder="L in m">
         </div>
       </div>
 
       <br>
-      <h5>Datos mecanicos</h5><br>
+      <h5>Mechanical Data</h5><br>
+      <div class="row">
+        <div class="col-md-12">
+          <label for="txtDec_mumas">Axial Load (Pu):</label>
+          <input type="number" id="Pu" class="form-control" placeholder="Ton">
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_mumas">Momento (Mu) max:</label>
-          <input type="number" id="muMas" class="form-control" placeholder="ton-m">
+          <label for="txtDec_mumas">Maximum Moment about X Axis (MuX):</label>
+          <input type="number" id="Mux" class="form-control"
+            placeholder="Moment about the X axis or parallel to the Y axis in ton-m">
         </div>
         <div class="col-md-6">
-          <label for="txtDec_mumenos">Momento (Mu) menor:</label>
-          <input type="number" id="muMenos" class="form-control" placeholder="ton-m">
+          <label for="txtDec_mumenos">Maximum Moment about Y Axis (MuY):</label>
+          <input type="number" id="Muy" class="form-control"
+            placeholder="Moment about the Y axis or parallel to the X axis in ton-m">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_mumas">Minimum Moment about X Axis (MuX):</label>
+          <input type="number" id="Muxmin" class="form-control"
+            placeholder="Moment about the X axis or parallel to the Y axis in ton-m">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_mumenos">Minimum Moment about Y Axis (MuY):</label>
+          <input type="number" id="Muymin" class="form-control"
+            placeholder="Moment about the Y axis or parallel to the X axis in ton-m">
         </div>
       </div>
 
 
-
-      <button id="btnRevisar" onclick="revisionViga()" class="btn btn-theme mt-3 wow fadeInUp ml-1">Revisar</button>
+      <button id="btnRevisar" onclick="revisarColumnaWIngles()" class="btn btn-theme mt-3 wow fadeInUp ml-1">Review</button>
 
       <br><br><br>
-      <h5>Resultados</h5><br>
+      <h5>Results</h5><br>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <label for="txtDec_resultados" id="labelResultado">___</label>
         </div>
-        <div class="col-md-6">
-          <label for="txtDec_resultados" id="labelResultado2">___</label>
-        </div>
+
       </div>
 
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
-            <label for="txtDec_resultados" id="labelResultadoCortante">___</label>
+          <div class="col-md-12">
+            <label for="txtDec_resultados" id="labelResultado2">___</label>
           </div>
         </div>
       </div>
@@ -232,7 +294,8 @@
     </div>
 
   </div>
-  
+
+
 
 
 
@@ -315,19 +378,24 @@
           document.getElementById('tf').value = perfilSeleccionado.tf;
           document.getElementById('tw').value = perfilSeleccionado.tw;
           document.getElementById('Iy').value = perfilSeleccionado.Iy;
+          document.getElementById('Ix').value = perfilSeleccionado.Ix;
           document.getElementById('Sx').value = perfilSeleccionado.Sx;
+          document.getElementById('Sy').value = perfilSeleccionado.Sy;
           document.getElementById('Zx').value = perfilSeleccionado.Zx;
+          document.getElementById('Zy').value = perfilSeleccionado.Zy;
+          document.getElementById('rx').value = perfilSeleccionado.rx;
+          document.getElementById('ry').value = perfilSeleccionado.ry;
+          document.getElementById('At').value = perfilSeleccionado.Area;
           document.getElementById('J').value = perfilSeleccionado.J;
           document.getElementById('Ca').value = perfilSeleccionado.Ca;
           document.getElementById('G').value = perfilSeleccionado.G;
           document.getElementById('cb').value = perfilSeleccionado.cb;
-          document.getElementById('fy').value = perfilSeleccionado.fy;
         });
       })
       .catch(error => console.error('Error cargando el archivo JSON:', error));
   </script>
 
-  <script src="../assets/js/disenoviga.obfuscated.js"></script>
+  <script src="../assets/js/columnasW.obfuscated.js"></script>
 
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
 

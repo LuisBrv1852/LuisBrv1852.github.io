@@ -29,10 +29,35 @@
 
   <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
 
-   <!--Codigo para anuncios-->
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
-   crossorigin="anonymous"></script>
-   <!--Codigo para anuncios-->
+  <!--Codigo para anuncios-->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
+    crossorigin="anonymous"></script>
+  <!--Codigo para anuncios-->
+
+  <style>
+    .centered-table .row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .centered-table .col-md-12 {
+      display: flex;
+      justify-content: center;
+    }
+
+    .centered-table table {
+      border-collapse: collapse;
+      width: 100%;
+      /* Ajusta este valor según tus necesidades */
+    }
+
+    .centered-table th,
+    .centered-table td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
 
 </head>
 
@@ -91,7 +116,7 @@
           <ul class="navbar-nav ml-auto">
 
             <li class="nav-item active">
-              <a href="disenoTrabe _ingles.html" class="nav-link" data-animate="scrolling">English</a>
+              <a href="disenoLosaNervada_ingles.html" class="nav-link" data-animate="scrolling">English</a>
             </li>
           </ul>
 
@@ -102,7 +127,7 @@
     <!-- Caption header -->
     <div class="caption-header text-center wow zoomInDown">
       <h5 class="fw-normal">Aplicación web</h5>
-      <h1 class="fw-light mb-4">Diseño de trabes de <b class="fg-theme">Concreto</b> </h1>
+      <h1 class="fw-light mb-4">Diseño de <b class="fg-theme">losa nervada </b> </h1>
       <div class="badge">Sigue las instrucciones </div>
     </div> <!-- End Caption header -->
     <div class="floating-button"><span class="ti-mouse"></span></div>
@@ -113,25 +138,40 @@
     <div class="text-center">
       <label for="editText_nombre_proyecto">Nombre del Proyecto:</label>
       <input type="text" id="nombreProy" class="form-control" placeholder="Ingrese el nombre del proyecto">
-      <label for="TextNum_num_trabe">Número de Trabe:</label>
-      <input type="number" id="numTrabe" class="form-control" placeholder="Ingrese el número de trabe">
-
+      <label for="TextNum_num_trabe">Nombre de la losa:</label>
+      <input type="number" id="numTrabe" class="form-control" placeholder="(Sala, Habitacion 1, Cocina, Tablero 1, etc.)">
+    
+      
+      <br>
+      <h5>Dimensiones Losa</h5><br>
+      <img src="/assets/img/diagramalosanervada .png" alt=""><br>
 
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_h">Altura (h):</label>
+          <label for="txtDec_h">Espesor (h):</label>
           <input type="number" id="h" class="form-control" placeholder="Altura en cm">
         </div>
         <div class="col-md-6">
-          <label for="txtDec_b">Ancho (b):</label>
-          <input type="number" id="b" class="form-control" placeholder="Ancho en cm">
+          <label for="txtDec_r">Recubrimiento (r):</label>
+          <input type="number" id="r" class="form-control" placeholder="Recubrimiento en cm">
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_r">Recubrimiento (r):</label>
-          <input type="number" id="r" class="form-control" placeholder="Recubrimiento en cm">
+          <label for="txtDec_h">Capa (t):</label>
+          <input type="number" id="t" class="form-control" placeholder="Capa en cm">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_r">Longitud de caseton (LC):</label>
+          <input type="number" id="LC" class="form-control" placeholder="LC en cm">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_h">Base nervios (b):</label>
+          <input type="number" id="b_" class="form-control" placeholder="b en cm">
         </div>
         <div class="col-md-6">
           <label for="txtDec_f1c">f'c:</label>
@@ -140,81 +180,203 @@
       </div>
 
       <div class="row">
-
         <div class="col-md-6">
           <label for="txtDec_fy">fy:</label>
           <input type="number" id="fy" class="form-control" placeholder="Fy en kg/cm2">
         </div>
       </div>
+      <br>
+      <h5>Dimensiones del tablero</h5><br>
+      <img src="/assets/img/esquemalosas.png" alt=""><br>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_mumas">L1:</label>
+          <input type="number" id="L1" class="form-control" placeholder="m" onchange="cargarCoeficientes()">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_mumenos">L2:</label>
+          <input type="number" id="L2" class="form-control" placeholder="m" onchange="cargarCoeficientes()">
+        </div>
+      </div>
+      <br>
+      <h5>Cargas</h5><br>
+      <p>Coloca la carga muerta y viva, o bien coloca la carga de servicio, y selecciona un factor de carga </p>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_mumas">Carga muerta (CM):</label>
+          <input type="number" id="CM" class="form-control" placeholder="kg/m2">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_mumenos">Carga viva (CV):</label>
+          <input type="number" id="CV" class="form-control" placeholder="kg/m2">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_mumas">Carga de servicio(CS)</label>
+          <input type="number" id="CS" class="form-control" placeholder="kg/m2">
+        </div>
+      </div>
+      <label for="perfil">Selecciona el factor de carga:</label>
+      <select id="tipoEstructura">
+        <option value="0">Selecciona el tipo de estructura</option>
+        <option value="1">Estructura A CU= 1.5CM + 1.7CV ó CU= 1.6CS</option>
+        <option value="2">Estructura B CU= 1.3CM + 1.5CV ó CU= 1.4CS</option>
+      </select>
+      
+
 
       <br>
-      <h5>Datos mecánicos</h5><br>
+      <h5>Acero </h5><br>
       <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_mumas">Momento positivo (Mu +):</label>
-          <input type="number" id="muMas" class="form-control" placeholder="ton-m">
+          <label for="txtDec_numeroVarPositivo">Para flexion usando varilla del número:</label>
+          <input type="number" id="diamVar1" class="form-control" placeholder="3-8">
         </div>
         <div class="col-md-6">
-          <label for="txtDec_mumenos">Momento negativo (Mu -):</label>
-          <input type="number" id="muMenos" class="form-control" placeholder="ton-m">
+          <label for="txtDec_numeroVarPositivo">Para temperatura usando malla electrosoldada:</label>
+          <br>
+          <select id="mallaElectrosoldada">
+            <option value="0">--- </option>
+            <option value="1">5x5-4/4</option>
+            <option value="2">6x6-4/4</option>
+            <option value="3">6x6-6/6</option>
+            <option value="4">6x6-8/8</option>
+            <option value="5">6x6-10/10</option>
+          </select>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <label for="txtDec_Vu">Cortante (Vu):</label>
-          <input type="number" id="vu" class="form-control" placeholder="ton">
-        </div>
+
       </div>
 
+
+      <br><br><br>
+      <h5>Tipo de losa y reglamento</h5><br>
+      <label for="perfil">Selecciona el tipo de losa:</label>
+      <select id="tipoLosa" onchange="cargarCoeficientes()">
+        <option value="0">Selecciona </option>
+        <option value="1">Interior</option>
+        <option value="2">De borde 1 lado corto discontinuo</option>
+        <option value="3">De borde 1 lado largo discontinuo</option>
+        <option value="4">De esquina</option>
+        <option value="5">De Extremo 1 lado largo continuo</option>
+        <option value="6">De Extremo 1 lado corto continuo</option>
+        <option value="7">Aislado</option>
+      </select>
       <br>
-      <h5>Acero de refuerzo</h5><br>
-      <br><label for="TextNum_num_trabe">Para momento positivo</label>
-      <div class="row">
-        <div class="col-md-6">
-          <label for="txtDec_CantidadVarPositivo">Cantidad de varillas:</label>
-          <input type="number" id="cantNumVarPos" class="form-control" placeholder="Minimo 2">
-        </div>
-        <div class="col-md-6">
-          <label for="txtDec_numeroVarPositivo">Usando varilla del número:</label>
-          <input type="number" id="diamVarPos" class="form-control" placeholder="3-8">
-        </div>
-      </div>
-      <br><label for="TextNum_num_trabe">Para momento negativo</label>
-      <div class="row">
-        <div class="col-md-6">
-          <label for="CantidadVarNegativo">Cantidad de varillas:</label>
-          <input type="number" id="cantNumVarNeg" class="form-control" placeholder="Minimo 2">
-        </div>
-        <div class="col-md-6">
-          <label for="txtDec_numeroVarPositivo">Usando varilla del número:</label>
-          <input type="number" id="diamVarNeg" class="form-control" placeholder="3-8">
-        </div>
-      </div>
-      <br><label for="TextNum_num_trabe">Para cortante</label>
-      <div class="row">
-        <div class="col-md-6">
-          <label for="txtDec_CantidadVarNegativo">Número de ramales:</label>
-          <input type="number" id="numRamales" class="form-control" placeholder="Minimo 2">
-        </div>
-        <div class="col-md-6">
-          <label for="txtDec_numeroVarPositivo">Usando varilla del numero:</label>
-          <input type="number" id="diamVarEst" class="form-control" placeholder="3-8">
-        </div>
-      </div>
+      <label for="perfil">¿Losa monolitica?:</label>
+      <select id="tipoMonolitica" onchange="cargarCoeficientes()">
+        <option value="0">Selecciona </option>
+        <option value="1">Si</option>
+        <option value="2">No</option>        
+      </select>
+      <br>
+      <label for="perfil">¿Coeficientes del 2020 ó 2023?:</label>
+      <select id="tipoReglamento" onchange="cargarCoeficientes()">
+        <option value="0">Selecciona </option>
+        <option value="1">2020</option>
+        <option value="2">2023</option>        
+      </select>
 
-      <button id="btnRevisar" onclick="calcularAS()" class="btn btn-theme mt-3 wow fadeInUp ml-1"
+      <br><br>
+      <button id="btnRevisar" onclick="losaNervada()" class="btn btn-theme mt-3 wow fadeInUp ml-1"
         target="_blank">Revisar</button>
 
       <br><br><br>
       <h5>Resultados</h5><br>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <label for="txtDec_resultados" id="labelResultado">___</label>
         </div>
-        <div class="col-md-6">
-          <label for="txtDec_resultados" id="labelResultado2">___</label>
+        
+      </div>
+
+      <div class="centered-table">
+        <div class="row">
+          <div class="col-md-12">
+            <table>
+              <thead>
+                <tr>
+                  <th>Momento</th>
+                  <th>Claro</th>
+                  <th>Coeficiente</th>
+                  <th>q</th>
+                  <th>ρ</th>
+                  <th>As</th>
+                  <th>Cantidad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>cm2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td id="momento1"></td>
+                  <td id="claro1">Corto</td>
+                  <td ><input type="number"id="coeficiente1" readonly></td>
+                  <td id="q1"></td>
+                  <td id="ro1"></td>
+                  <td id="As1"></td>
+                  <td id="sep1"></td>
+                </tr>
+                <tr>
+                  <td id="momento2"></td>
+                  <td id="claro2">Largo</td>
+                  <td ><input type="number"id="coeficiente2" readonly></td>
+                  <td id="q2"></td>
+                  <td id="ro2"></td>
+                  <td id="As2"></td>
+                  <td id="sep2"></td>
+                </tr>
+                <tr>
+                  <td id="momento3"></td>
+                  <td id="claro3">Corto</td>
+                  <td ><input type="number"id="coeficiente3" readonly></td>
+                  <td id="q3"></td>
+                  <td id="ro3"></td>
+                  <td id="As3"></td>
+                  <td id="sep3"></td>
+                </tr>
+                <tr>
+                  <td id="momento4"></td>
+                  <td id="claro4">Largo</td>
+                  <td ><input type="number"id="coeficiente4" readonly></td>
+                  <td id="q4"></td>
+                  <td id="ro4"></td>
+                  <td id="As4"></td>
+                  <td id="sep4"></td>
+                </tr>
+                <tr>
+                  <td id="momento5"></td>
+                  <td id="claro5">Corto</td>
+                  <td ><input type="number"id="coeficiente5" readonly></td>
+                  <td id="q5"></td>
+                  <td id="ro5"></td>
+                  <td id="As5"></td>
+                  <td id="sep5"></td>
+                </tr>
+                <tr>
+                  <td id="momento6"></td>
+                  <td id="claro6">Largo</td>
+                  <td ><input type="number"id="coeficiente6" readonly></td>
+                  <td id="q6"></td>
+                  <td id="ro6"></td>
+                  <td id="As6"></td>
+                  <td id="sep6"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
+
+
+      
 
       <div class="container-fluid">
         <div class="row">
@@ -224,7 +386,7 @@
         </div>
       </div>
       <br>
-   
+
 
 
     </div>
@@ -283,7 +445,7 @@
     </div>
   </div> <!-- End footer -->
 
-  <script src="../assets/js/disenotrabe.obfuscated.js"></script>
+  <script src="../assets/js/losaNervada.obfuscated.js"></script>
 
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
 
