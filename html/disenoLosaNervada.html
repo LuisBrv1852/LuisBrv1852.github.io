@@ -59,6 +59,26 @@
     }
   </style>
 
+<style>
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+
+    #about,
+    #about * {
+      visibility: visible;
+    }
+
+    #about {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+</style>
+
+
 </head>
 
 <body class="theme-blue">
@@ -127,14 +147,16 @@
     <!-- Caption header -->
     <div class="caption-header text-center wow zoomInDown">
       <h5 class="fw-normal">Aplicación web</h5>
-      <h1 class="fw-light mb-4">Diseño de <b class="fg-theme">losa nervada </b> </h1>
+      <h1 class="fw-light mb-4">Diseño de <b class="fg-theme">Losa Nervada </b> </h1>
       <div class="badge">Sigue las instrucciones </div>
     </div> <!-- End Caption header -->
     <div class="floating-button"><span class="ti-mouse"></span></div>
   </div>
 
   <div class="vg-page page-about" id="about">
-    <h3 class="text-center">Llena todos los espacios en blanco</h3>
+    <h1 class="text-center">Diseño de Losa Nervada</h1>
+    <h4 class="text-center">Llena todos los espacios en blanco</h4>
+
     <div class="text-center">
       <label for="editText_nombre_proyecto">Nombre del Proyecto:</label>
       <input type="text" id="nombreProy" class="form-control" placeholder="Ingrese el nombre del proyecto">
@@ -392,8 +414,15 @@
     </div>
 
   </div>
-  </div>
 
+  <div class="text-center">
+    <p>Presiona Ctrl+p o presiona PDF</p>
+    <p>Para guardar los resultados como PDF, selecciona la opción " PDF" en la ventana de impresión.</p>
+    <p>Se recomienda colocar la opcion de ninguna en margen .</p>
+    <button id="printButton" class="btn btn-theme mt-3 wow fadeInUp ml-1">PDF</button><br><br><br><br><br><br>
+    <p>Puedes descargar el formulario desde aqui .</p>
+    <button id="botonFormularios" class="btn btn-theme mt-3 wow fadeInUp ml-1">Formularios</button>
+  </div>
 
 
 
@@ -470,23 +499,27 @@
 
   <script src="../assets/js/topbar-virtual.js"></script>
 
+  <script>
+    document.addEventListener('keydown', function (event) {
+      if (event.ctrlKey && event.key === 'p') {
+        event.preventDefault();
+        window.print();
+      }
+    });
+
+    document.getElementById('printButton').addEventListener('click', function () {
+      window.print();
+    });
+
+    document.getElementById('botonFormularios').addEventListener('click', function () {
+      window.open('https://drive.google.com/drive/folders/1pQ6MAOgFHui3Z7guFGWInFzmBC38wVzW?usp=sharing', '_blank');
+    });
+  </script>
+
+
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
 
-  <script>
-    function imprimirContenido() {
-      var contenido = document.getElementById('about').innerHTML;
-      var contenidoImpresion = '<div>' + contenido + '</div>';
-      var temporal = document.createElement('div');
-      temporal.innerHTML = contenidoImpresion;
-
-      var ventanaImpresion = window.open('', '_blank');
-      ventanaImpresion.document.write(temporal.innerHTML);
-      ventanaImpresion.document.close();
-      ventanaImpresion.print();
-      ventanaImpresion.close();
-    }
-  </script>
 
 </body>
 

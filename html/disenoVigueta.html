@@ -29,10 +29,30 @@
 
   <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
 
-   <!--Codigo para anuncios-->
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
-   crossorigin="anonymous"></script>
-   <!--Codigo para anuncios-->
+  <!--Codigo para anuncios-->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
+    crossorigin="anonymous"></script>
+  <!--Codigo para anuncios-->
+
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+
+      #about,
+      #about * {
+        visibility: visible;
+      }
+
+      #about {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  </style>
+
 
 </head>
 
@@ -109,7 +129,8 @@
   </div>
 
   <div class="vg-page page-about" id="about">
-    <h3 class="text-center">Llena todos los espacios en blanco</h3>
+    <h1 class="text-center">Diseño de viguetas de Alma abierta</h1>
+    <h4 class="text-center">Llena todos los espacios en blanco</h4>
     <div class="text-center">
       <label for="editText_nombre_proyecto">Nombre del Proyecto:</label>
       <input type="text" id="nombreProy" class="form-control" placeholder="Ingrese el nombre del proyecto">
@@ -146,9 +167,9 @@
       </div>
 
 
-     
+
       <div class="row">
-        
+
         <div class="col-md-6">
           <label for="txtDec_f1c">f'c:</label>
           <input type="number" id="f1c" class="form-control" placeholder="F'c en kg/cm2">
@@ -172,7 +193,7 @@
         </div>
       </div>
 
-  
+
       <br>
       <h5>Acero de refuerzo</h5><br>
       <br><label for="TextNum_num_trabe">Para momento positivo</label>
@@ -193,9 +214,9 @@
 
       <h5>Acero por temperatura</h5><br>
       <br><label for="TextNum_num_trabe">Para capa de compresion</label>
-      <div class="row">      
+      <div class="row">
         <div class="col-md-6">
-          <label for="txtDec_malla">Selecciona la malla electrosoldada:</label>          
+          <label for="txtDec_malla">Selecciona la malla electrosoldada:</label>
         </div>
         <select id="mallaElectrosoldada">
           <option value="0">--- </option>
@@ -206,13 +227,13 @@
           <option value="5">6x6-10/10</option>
         </select>
       </div>
-      
+
       <button id="btnRevisar" onclick="revisionVigueta()" class="btn btn-theme mt-3 wow fadeInUp ml-1"
         target="_blank">Revisar</button>
 
       <br><br><br>
       <h5>Resultados</h5><br>
-      
+
 
       <div class="container-fluid">
         <div class="row">
@@ -222,14 +243,21 @@
         </div>
       </div>
       <br>
-   
+
 
 
     </div>
 
   </div>
-  </div>
 
+  <div class="text-center">
+    <p>Presiona Ctrl+p o presiona PDF</p>
+    <p>Para guardar los resultados como PDF, selecciona la opción " PDF" en la ventana de impresión.</p>
+    <p>Se recomienda colocar la opcion de ninguna en margen .</p>
+    <button id="printButton" class="btn btn-theme mt-3 wow fadeInUp ml-1">PDF</button><br><br><br><br><br><br>
+    <p>Puedes descargar el formulario desde aqui .</p>
+    <button id="botonFormularios" class="btn btn-theme mt-3 wow fadeInUp ml-1">Formularios</button>
+  </div>
 
 
 
@@ -305,6 +333,24 @@
   <script src="../assets/js/google-maps.js"></script>
 
   <script src="../assets/js/topbar-virtual.js"></script>
+
+  <script>
+    document.addEventListener('keydown', function (event) {
+      if (event.ctrlKey && event.key === 'p') {
+        event.preventDefault();
+        window.print();
+      }
+    });
+
+    document.getElementById('printButton').addEventListener('click', function () {
+      window.print();
+    });
+
+    document.getElementById('botonFormularios').addEventListener('click', function () {
+      window.open('https://drive.google.com/drive/folders/1pQ6MAOgFHui3Z7guFGWInFzmBC38wVzW?usp=sharing', '_blank');
+    });
+  </script>
+
 
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>

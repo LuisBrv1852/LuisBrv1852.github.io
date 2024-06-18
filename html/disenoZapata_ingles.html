@@ -29,10 +29,30 @@
 
   <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
 
-   <!--Codigo para anuncios-->
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
-   crossorigin="anonymous"></script>
-   <!--Codigo para anuncios-->
+  <!--Codigo para anuncios-->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
+    crossorigin="anonymous"></script>
+  <!--Codigo para anuncios-->
+
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+
+      #about,
+      #about * {
+        visibility: visible;
+      }
+
+      #about {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  </style>
+
 
 </head>
 
@@ -109,7 +129,9 @@
   </div>
 
   <div class="vg-page page-about" id="about">
-    <h3 class="text-center">Fill in all the blanks</h3>
+    <h1 class="text-center">Concrete isolated footing Design</h1>
+    <h4 class="text-center">Fill in all the blanks</h4>
+
     <div class="text-center">
       <label for="editText_nombre_proyecto">Project's name:</label>
       <input type="text" id="nombreProy" class="form-control" placeholder="Ingrese el nombre del proyecto">
@@ -128,8 +150,9 @@
       <div class="row">
         <div class="col-md-6">
           <label for="txtDec_FC">Charge Factor (C.F.):</label>
-          <input type="number" id="FC" class="form-control" placeholder="1.6 is recommended for type A structure or 1.4 for type B structure">
-        </div>      
+          <input type="number" id="FC" class="form-control"
+            placeholder="1.6 is recommended for type A structure or 1.4 for type B structure">
+        </div>
       </div>
 
 
@@ -213,7 +236,7 @@
         <div class="col-md-6">
           <label for="txtDec_densidad">Density or volumetric weight of the soil:</label>
           <input type="number" id="densidadSuelo" class="form-control" placeholder="ton/m3">
-        </div>    
+        </div>
       </div>
 
       <br>
@@ -229,13 +252,13 @@
         </div>
       </div>
 
-      
+
 
       <button id="btnRevisar" onclick="revisarZapata()" class="btn btn-theme mt-3 wow fadeInUp ml-1"
         target="_blank">Review</button>
 
       <br><br><br>
-      <h5>Results</h5><br>  
+      <h5>Results</h5><br>
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
@@ -249,7 +272,16 @@
     </div>
 
   </div>
+
+  <div class="text-center">
+    <p>Press Ctrl+p or press PDF</p>
+    <p>To save the results as PDF, select the "PDF" option in the print window.</p>
+    <p>It is recommended to place the option of none in margin.</p>
+    <button id="printButton" class="btn btn-theme mt-3 wow fadeInUp ml-1">PDF</button><br><br><br><br><br><br>
+    <p>You can download the form from here .</p>
+    <button id="botonFormularios" class="btn btn-theme mt-3 wow fadeInUp ml-1">Forms</button>
   </div>
+
 
 
 
@@ -326,6 +358,24 @@
   <script src="../assets/js/google-maps.js"></script>
 
   <script src="../assets/js/topbar-virtual.js"></script>
+  
+  <script>
+    document.addEventListener('keydown', function (event) {
+      if (event.ctrlKey && event.key === 'p') {
+        event.preventDefault();
+        window.print();
+      }
+    });
+
+    document.getElementById('printButton').addEventListener('click', function () {
+      window.print();
+    });
+
+    document.getElementById('botonFormularios').addEventListener('click', function () {
+      window.open('https://drive.google.com/drive/folders/1pQ6MAOgFHui3Z7guFGWInFzmBC38wVzW?usp=sharing', '_blank');
+    });
+  </script>
+
 
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>

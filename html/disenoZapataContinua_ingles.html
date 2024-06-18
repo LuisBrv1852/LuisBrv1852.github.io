@@ -34,6 +34,25 @@
     crossorigin="anonymous"></script>
   <!--Codigo para anuncios-->
 
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+
+      #about,
+      #about * {
+        visibility: visible;
+      }
+
+      #about {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  </style>
+
 </head>
 
 <body class="theme-red">
@@ -107,135 +126,143 @@
       <div class="badge">Follow the instructions</div>
     </div> <!-- End Caption header -->
     <div class="floating-button"><span class="ti-mouse"></span></div>
+  </div>
+
+  <div class="vg-page page-about" id="about">
+    <h1 class="text-center">Design of Continuous Footing</h1>
+    <h4 class="text-center">Fill in all the blanks</h4>
+    <div class="text-center">
+      <label for="editText_nombre_proyecto">Project Name:</label>
+      <input type="text" id="nombreProy" class="form-control" placeholder="Enter the project name">
+      <label for="TextNum_num_trabe">Footing Number:</label>
+      <input type="number" id="numTrabe" class="form-control" placeholder="Enter the footing number">
+      <img src="/assets/img/diagramazapatacontinua.png" alt=""><br>
+      <label for="perfil">Select a type of Footing:</label>
+      <select id="tipoZapata">
+        <option value="0">Select</option>
+        <option value="1">Interior or Central</option>
+        <option value="2">Edge</option>
+      </select>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_FC">Load Factor (F.C.):</label>
+          <input type="number" id="FC" class="form-control"
+            placeholder="1.6 is recommended for type A structure or 1.4 for type B structure">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_dadoX">Tie Beam Base (CT):</label>
+          <input type="number" id="CT" class="form-control" placeholder="m">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_h">Thickness (h):</label>
+          <input type="number" id="h" class="form-control" placeholder="Thickness in m (minimum 0.15)">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_r">Cover (r):</label>
+          <input type="number" id="r" class="form-control" placeholder="Cover in m">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_B">Base Dimension (B):</label>
+          <input type="number" id="B" class="form-control" placeholder="B in m">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_L">Length Dimension (L):</label>
+          <input type="number" id="L" class="form-control" placeholder="L in m">
+        </div>
+      </div>
+
+      <div class="row">
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_f1c">f'c:</label>
+          <input type="number" id="f1c" class="form-control" placeholder="f'c in kg/cm2">
+        </div>
+
+        <div class="col-md-6">
+          <label for="txtDec_fy">fy:</label>
+          <input type="number" id="fy" class="form-control" placeholder="Fy in kg/cm2">
+        </div>
+      </div>
+
+      <br>
+      <h5>Mechanical Data</h5><br>
+
+      <div class="row">
+        <div class="col-md-12">
+          <label for="txtDec_ps">Axial Service Load (PS):</label>
+          <input type="number" id="ps" class="form-control" placeholder="ton">
+        </div>
+      </div>
+
+      <br>
+      <h5>Soil Data</h5><br>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_Df">Foundation Depth (Df):</label>
+          <input type="number" id="Df" class="form-control" placeholder="m">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_qu">Ultimate Soil Bearing Capacity (qu):</label>
+          <input type="number" id="qu" class="form-control" placeholder="ton/m2">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_densidad">Soil Density or Unit Weight:</label>
+          <input type="number" id="densidadSuelo" class="form-control" placeholder="ton/m3">
+        </div>
+      </div>
+
+      <br>
+      <h5>Reinforcing Steel</h5><br>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="txtDec_VarillaFelxion">For flexion using bar number:</label>
+          <input type="number" id="varillaFlexion" class="form-control" placeholder="3 to 8">
+        </div>
+        <div class="col-md-6">
+          <label for="txtDec_VarillaTemperatura">For temperature using bar number:</label>
+          <input type="number" id="varillaTemperatura" class="form-control" placeholder="3 to 8">
+        </div>
+      </div>
+
+      <button id="btnRevisar" onclick="zapataContinuaIngles()" class="btn btn-theme mt-3 wow fadeInUp ml-1"
+        target="_blank">Review</button>
+
+      <br><br><br>
+      <h5>Results</h5><br>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <label for="txtDec_resultados" id="labelResultados">___</label>
+          </div>
+        </div>
+      </div>
+      <br>
+
     </div>
 
-    <div class="vg-page page-about" id="about">
-      <h3 class="text-center">Fill in all the blanks</h3>
-      <div class="text-center">
-        <label for="editText_nombre_proyecto">Project Name:</label>
-        <input type="text" id="nombreProy" class="form-control" placeholder="Enter the project name">
-        <label for="TextNum_num_trabe">Footing Number:</label>
-        <input type="number" id="numTrabe" class="form-control" placeholder="Enter the footing number">
-        <img src="/assets/img/diagramazapatacontinua.png" alt=""><br>
-        <label for="perfil">Select a type of Footing:</label>
-        <select id="tipoZapata">
-          <option value="0">Select</option>
-          <option value="1">Interior or Central</option>
-          <option value="2">Edge</option>
-        </select>
-  
-        <div class="row">
-          <div class="col-md-6">
-            <label for="txtDec_FC">Load Factor (F.C.):</label>
-            <input type="number" id="FC" class="form-control"
-              placeholder="1.6 is recommended for type A structure or 1.4 for type B structure">
-          </div>
-          <div class="col-md-6">
-            <label for="txtDec_dadoX">Tie Beam Base (CT):</label>
-            <input type="number" id="CT" class="form-control" placeholder="m">
-          </div>
-        </div>
-  
-        <div class="row">
-          <div class="col-md-6">
-            <label for="txtDec_h">Thickness (h):</label>
-            <input type="number" id="h" class="form-control" placeholder="Thickness in m (minimum 0.15)">
-          </div>
-          <div class="col-md-6">
-            <label for="txtDec_r">Cover (r):</label>
-            <input type="number" id="r" class="form-control" placeholder="Cover in m">
-          </div>
-        </div>
-  
-        <div class="row">
-          <div class="col-md-6">
-            <label for="txtDec_B">Base Dimension (B):</label>
-            <input type="number" id="B" class="form-control" placeholder="B in m">
-          </div>
-          <div class="col-md-6">
-            <label for="txtDec_L">Length Dimension (L):</label>
-            <input type="number" id="L" class="form-control" placeholder="L in m">
-          </div>
-        </div>
-  
-        <div class="row">
-  
-        </div>
-  
-        <div class="row">
-          <div class="col-md-6">
-            <label for="txtDec_f1c">f'c:</label>
-            <input type="number" id="f1c" class="form-control" placeholder="f'c in kg/cm2">
-          </div>
-  
-          <div class="col-md-6">
-            <label for="txtDec_fy">fy:</label>
-            <input type="number" id="fy" class="form-control" placeholder="Fy in kg/cm2">
-          </div>
-        </div>
-  
-        <br>
-        <h5>Mechanical Data</h5><br>
-        
-        <div class="row">
-          <div class="col-md-12">
-            <label for="txtDec_ps">Axial Service Load (PS):</label>
-            <input type="number" id="ps" class="form-control" placeholder="ton">
-          </div>
-        </div>
-  
-        <br>
-        <h5>Soil Data</h5><br>
-        <div class="row">
-          <div class="col-md-6">
-            <label for="txtDec_Df">Foundation Depth (Df):</label>
-            <input type="number" id="Df" class="form-control" placeholder="m">
-          </div>
-          <div class="col-md-6">
-            <label for="txtDec_qu">Ultimate Soil Bearing Capacity (qu):</label>
-            <input type="number" id="qu" class="form-control" placeholder="ton/m2">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <label for="txtDec_densidad">Soil Density or Unit Weight:</label>
-            <input type="number" id="densidadSuelo" class="form-control" placeholder="ton/m3">
-          </div>
-        </div>
-  
-        <br>
-        <h5>Reinforcing Steel</h5><br>
-        <div class="row">
-          <div class="col-md-6">
-            <label for="txtDec_VarillaFelxion">For flexion using bar number:</label>
-            <input type="number" id="varillaFlexion" class="form-control" placeholder="3 to 8">
-          </div>
-          <div class="col-md-6">
-            <label for="txtDec_VarillaTemperatura">For temperature using bar number:</label>
-            <input type="number" id="varillaTemperatura" class="form-control" placeholder="3 to 8">
-          </div>
-        </div>
-  
-        <button id="btnRevisar" onclick="zapataContinuaIngles()" class="btn btn-theme mt-3 wow fadeInUp ml-1"
-          target="_blank">Review</button>
-  
-        <br><br><br>
-        <h5>Results</h5><br>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <label for="txtDec_resultados" id="labelResultados">___</label>
-            </div>
-          </div>
-        </div>
-        <br>
-  
-      </div>
-  
   </div>
-  
 
 
+  <div class="text-center">
+    <p>Press Ctrl+p or press PDF</p>
+    <p>To save the results as PDF, select the "PDF" option in the print window.</p>
+    <p>It is recommended to place the option of none in margin.</p>
+    <button id="printButton" class="btn btn-theme mt-3 wow fadeInUp ml-1">PDF</button><br><br><br><br><br><br>
+    <p>You can download the form from here .</p>
+    <button id="botonFormularios" class="btn btn-theme mt-3 wow fadeInUp ml-1">Forms</button>
+  </div>
 
 
 
@@ -310,6 +337,24 @@
   <script src="../assets/js/google-maps.js"></script>
 
   <script src="../assets/js/topbar-virtual.js"></script>
+
+  <script>
+    document.addEventListener('keydown', function (event) {
+      if (event.ctrlKey && event.key === 'p') {
+        event.preventDefault();
+        window.print();
+      }
+    });
+
+    document.getElementById('printButton').addEventListener('click', function () {
+      window.print();
+    });
+
+    document.getElementById('botonFormularios').addEventListener('click', function () {
+      window.open('https://drive.google.com/drive/folders/1pQ6MAOgFHui3Z7guFGWInFzmBC38wVzW?usp=sharing', '_blank');
+    });
+  </script>
+
 
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
