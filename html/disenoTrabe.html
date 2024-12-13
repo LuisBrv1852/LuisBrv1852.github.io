@@ -133,55 +133,43 @@
 
     <div class="floating-button"><span class="ti-mouse"></span></div>
 
-    <!-- Contenedor donde se cargará el anuncio de AdSense -->
-    <div id="adsense-test" style="display: none;">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4671466113771979" data-ad-slot="1234567890"
-        data-ad-format="auto"></ins>
-    </div>
-
-    <!-- Mensaje de advertencia si se detecta bloqueador de anuncios -->
-    <div id="adblock-message" class="hidden">
-      <div class="message-box">
+    <!-- Mensaje de bloqueador -->
+    <div id="adblock-message"
+      style="display: none; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 9999;">
+      <div>
         <h2>El uso de bloqueadores de anuncios no está permitido en este sitio web</h2>
         <p>
           Esta página es gratuita, así que dependemos únicamente de la publicidad para generar ganancias.
-          Por favor, evita que tengamos que agregar una suscripción.
+          Por favor, desactiva tu bloqueador de anuncios.
         </p>
       </div>
     </div>
 
-    <!-- Contenedor simulado para un anuncio -->
-    <div class="ad-banner" style="width: 1px; height: 1px; position: absolute; top: -9999px;"></div>
-
+    <!-- Contenedor de anuncio -->
+    <div id="ad-container" style="display: none;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4671466113771979" data-ad-slot="1234567890"
+        data-ad-format="auto"></ins>
+    </div>
 
     <script>
+      // Función para detectar bloqueadores
       document.addEventListener("DOMContentLoaded", () => {
-        // Crear un anuncio de prueba
-        const adContainer = document.createElement("div");
-        adContainer.innerHTML = `
-          <ins class="adsbygoogle"
-               style="display:inline-block;width:1px;height:1px;"
-               data-ad-client="ca-pub-4671466113771979"
-               data-ad-slot="1234567890"></ins>
-        `;
-        document.body.appendChild(adContainer);
-    
-        // Verificar si el anuncio está visible
+        const adContainer = document.getElementById('ad-container');
+        adContainer.style.display = 'block'; // Mostrar el contenedor del anuncio
+
+        // Intentar cargar el anuncio de Google AdSense
+        (adsbygoogle = window.adsbygoogle || []).push({});
+
+        // Verificar si el anuncio se carga correctamente
         setTimeout(() => {
-          const adBlocked = adContainer.offsetHeight === 0 || adContainer.offsetWidth === 0;
-    
-          if (adBlocked) {
-            // Mostrar mensaje de bloqueador
-            const adblockMessage = document.getElementById("adblock-message");
-            adblockMessage.classList.remove("hidden");
+          const adLoaded = adContainer.offsetHeight > 0;
+          if (!adLoaded) {
+            // Si no se cargó el anuncio, mostrar el mensaje de bloqueador
+            document.getElementById('adblock-message').style.display = 'flex';
           }
-    
-          // Limpiar el contenedor de prueba
-          adContainer.remove();
-        }, 2000); // Esperar un tiempo para que el anuncio cargue
+        }, 2000); // Esperar 2 segundos para que cargue el anuncio
       });
     </script>
-
 
 
     <div class="video-container" id="tutorial">
