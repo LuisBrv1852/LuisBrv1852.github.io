@@ -133,6 +133,12 @@
 
     <div class="floating-button"><span class="ti-mouse"></span></div>
 
+    <!-- Contenedor donde se cargará el anuncio de AdSense -->
+    <div id="adsense-test" style="display: none;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4671466113771979" data-ad-slot="1234567890"
+        data-ad-format="auto"></ins>
+    </div>
+
     <!-- Mensaje de advertencia si se detecta bloqueador de anuncios -->
     <div id="adblock-message" class="hidden">
       <div class="message-box">
@@ -148,7 +154,33 @@
     <div class="ad-banner" style="width: 1px; height: 1px; position: absolute; top: -9999px;"></div>
 
 
-    <script src="../assets/js/bloqueo.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Crear un anuncio de prueba
+        const adContainer = document.createElement("div");
+        adContainer.innerHTML = `
+          <ins class="adsbygoogle"
+               style="display:inline-block;width:1px;height:1px;"
+               data-ad-client="ca-pub-4671466113771979"
+               data-ad-slot="1234567890"></ins>
+        `;
+        document.body.appendChild(adContainer);
+    
+        // Verificar si el anuncio está visible
+        setTimeout(() => {
+          const adBlocked = adContainer.offsetHeight === 0 || adContainer.offsetWidth === 0;
+    
+          if (adBlocked) {
+            // Mostrar mensaje de bloqueador
+            const adblockMessage = document.getElementById("adblock-message");
+            adblockMessage.classList.remove("hidden");
+          }
+    
+          // Limpiar el contenedor de prueba
+          adContainer.remove();
+        }, 2000); // Esperar un tiempo para que el anuncio cargue
+      });
+    </script>
 
 
 
