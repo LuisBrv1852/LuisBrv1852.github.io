@@ -105,7 +105,7 @@
   height: 100%;
   color: #fff;
   z-index: 10;
-  padding-top: 70px;  /* Espacio en la parte superior */
+  padding-top: 100px;  /* Espacio en la parte superior */
   padding-bottom: 70px;  /* Espacio en la parte inferior */
 }
 
