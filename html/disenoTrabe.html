@@ -32,9 +32,7 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/bloq.css">
 
-
-
-  <!--Codigo para anuncios-->
+    <!--Codigo para anuncios-->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
     crossorigin="anonymous"></script>
   <!--Codigo para anuncios-->
@@ -133,9 +131,15 @@
 
     <div class="floating-button"><span class="ti-mouse"></span></div>
 
-    <!-- Mensaje de bloqueador -->
-    <div id="adblock-message"
-      style="display: none; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 9999;">
+    <!-- Contenedor del anuncio -->
+    <div id="ad-container">
+      <!-- Código del anuncio de Google AdSense -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4671466113771979" data-ad-slot="1234567890"
+        data-ad-format="auto"></ins>
+    </div>
+
+    <!-- Mensaje si hay un bloqueador de anuncios -->
+    <div id="adblock-message">
       <div>
         <h2>El uso de bloqueadores de anuncios no está permitido en este sitio web</h2>
         <p>
@@ -145,31 +149,7 @@
       </div>
     </div>
 
-    <!-- Contenedor de anuncio -->
-    <div id="ad-container" style="display: none;">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4671466113771979" data-ad-slot="1234567890"
-        data-ad-format="auto"></ins>
-    </div>
-
-    <script>
-      // Función para detectar bloqueadores
-      document.addEventListener("DOMContentLoaded", () => {
-        const adContainer = document.getElementById('ad-container');
-        adContainer.style.display = 'block'; // Mostrar el contenedor del anuncio
-
-        // Intentar cargar el anuncio de Google AdSense
-        (adsbygoogle = window.adsbygoogle || []).push({});
-
-        // Verificar si el anuncio se carga correctamente
-        setTimeout(() => {
-          const adLoaded = adContainer.offsetHeight > 0;
-          if (!adLoaded) {
-            // Si no se cargó el anuncio, mostrar el mensaje de bloqueador
-            document.getElementById('adblock-message').style.display = 'flex';
-          }
-        }, 2000); // Esperar 2 segundos para que cargue el anuncio
-      });
-    </script>
+    
 
 
     <div class="video-container" id="tutorial">
@@ -392,6 +372,33 @@
     <script src="../assets/js/google-maps.js"></script>
 
     <script src="../assets/js/topbar-virtual.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+      const adContainer = document.getElementById('ad-container');
+      const adblockMessage = document.getElementById('adblock-message');
+
+      // Mostrar el contenedor del anuncio y cargar el script de Google AdSense
+      adContainer.style.display = 'block';
+
+      // Simula la carga del anuncio de Google AdSense
+      try {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (e) {
+        console.log("Error al cargar Google AdSense.");
+      }
+
+      // Verificar si el anuncio se carga después de un tiempo
+      setTimeout(() => {
+        const adLoaded = adContainer.offsetHeight > 0;
+
+        if (!adLoaded) {
+          // Si no se carga el anuncio, muestra el mensaje
+          adblockMessage.style.display = 'flex';
+        }
+      }, 9000); // Esperar 2 segundos para evaluar si el anuncio se cargó
+    });
+    </script>
 
 
 
