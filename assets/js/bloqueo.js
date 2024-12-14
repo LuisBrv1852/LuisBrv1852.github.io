@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (adContainer.offsetHeight > 0) {
       adLoaded = true;
       adblockMessage.style.display = 'none'; // Ocultar mensaje
-      adContainer.remove(); // Eliminar el contenedor del anuncio
-      console.log("Anuncio cargado correctamente. Contenedor eliminado.");
+      console.log("Anuncio cargado correctamente.");
     } else {
       console.log("Anuncio no detectado todavía...");
     }
