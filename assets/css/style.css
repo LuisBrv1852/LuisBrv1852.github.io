@@ -15,8 +15,8 @@
   }
   
   .video-container iframe {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 250px;
+    height: 250px;
     border: none;
     display: block;
     margin: 0 auto; /* Centra el video horizontalmente */
