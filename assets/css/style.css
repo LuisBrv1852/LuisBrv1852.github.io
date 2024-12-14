@@ -15,8 +15,10 @@
   }
   
   .video-container iframe {
-    width: 100%; /* Asegura que el video sea responsivo */
-    height: 400px;
+    max-width: 200px;
+    max-height: 200px;
     border: none;
+    display: block;
+    margin: 0 auto; /* Centra el video horizontalmente */
   }
   
