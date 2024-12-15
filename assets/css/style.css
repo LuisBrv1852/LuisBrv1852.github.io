@@ -1,33 +1,28 @@
-.video-container {
-    text-align: center;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    max-width: 80%;
-    margin: 20px auto; /* Centra el contenedor en la página */
-  }
-  
-  .video-container h4 {
-    font-family: Arial, sans-serif;
-    font-size: 1 rem;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .video-container iframe {
-    width: 100%;
-    height: 350px;
-    border: none;
-    display: block;
-    margin: 0 auto; /* Centra el video horizontalmente */
-  }
+.caption-header .video-container {
+  display: block;
+  /* Elimina el efecto de flexbox */
+  width: 100%;
+  /* Asegúrate de que ocupe el ancho disponible */
+  max-width: 800px;
+  /* Ajusta este valor al ancho deseado */
+  margin: 0 auto;
+  /* Centra horizontalmente */
+}
 
-  .caption-header .video-container {
-    display: block; /* Elimina el efecto de flexbox */
-    width: 100%; /* Asegúrate de que ocupe el ancho disponible */
-    max-width: 800px; /* Ajusta este valor al ancho deseado */
-    margin: 0 auto; /* Centra horizontalmente */
-  }
-  
-  
-  
+.video-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  max-width: 80%;
+  margin: 20px auto;
+  /* Centra el contenedor en la página */
+}
+
+.video-container h4 {
+  font-family: Arial, sans-serif;
+  font-size: 1 rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
