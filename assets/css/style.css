@@ -9,7 +9,7 @@
   
   .video-container h4 {
     font-family: Arial, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1 rem;
     margin-bottom: 15px;
     color: #333;
   }
@@ -21,4 +21,13 @@
     display: block;
     margin: 0 auto; /* Centra el video horizontalmente */
   }
+
+  .caption-header .video-container {
+    display: block; /* Elimina el efecto de flexbox */
+    width: 100%; /* Asegúrate de que ocupe el ancho disponible */
+    max-width: 800px; /* Ajusta este valor al ancho deseado */
+    margin: 0 auto; /* Centra horizontalmente */
+  }
+  
+  
   
