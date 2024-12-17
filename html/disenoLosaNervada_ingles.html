@@ -29,6 +29,10 @@
 
   <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
 
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/bloq.css">
+
   <!--Codigo para anuncios-->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
     crossorigin="anonymous"></script>
@@ -59,24 +63,24 @@
     }
   </style>
 
-<style>
-  @media print {
-    body * {
-      visibility: hidden;
-    }
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
 
-    #about,
-    #about * {
-      visibility: visible;
-    }
+      #about,
+      #about * {
+        visibility: visible;
+      }
 
-    #about {
-      position: absolute;
-      left: 0;
-      top: 0;
+      #about {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
     }
-  }
-</style>
+  </style>
 
 
 </head>
@@ -153,17 +157,29 @@
     <div class="floating-button"><span class="ti-mouse"></span></div>
   </div>
 
+  <!--Codigo para mostrar tutorial-->
+  <div class="video-container vg-page portfolio" id="tutorial">
+    <h4 class="text-center">Tutorial</h4>
+
+    <iframe src="https://www.youtube.com/embed/IIGiYdKvsl0?si=FdBbvK2pz-5QExH6" title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+
   <div class="vg-page page-about" id="about">
     <h1 class="text-center">Ribbed slab design</h1>
-      <h4 class="text-center">Fill in all the blanks</h4>
+    <h4 class="text-center">Fill in all the blanks</h4>
 
     <div class="text-center">
       <label for="editText_nombre_proyecto">Project's name:</label>
       <input type="text" id="nombreProy" class="form-control" placeholder="Enter the project name">
       <label for="TextNum_num_trabe">Slab name:</label>
-      <input type="number" id="numTrabe" class="form-control" placeholder="(Living room, Room 1, Kitchen, Board 1, etc.)">
-    
-      
+      <input type="number" id="numTrabe" class="form-control"
+        placeholder="(Living room, Room 1, Kitchen, Board 1, etc.)">
+
+
       <br>
       <h5>Slab Dimensions</h5><br>
       <img src="/assets/img/diagramalosanervada .png" alt=""><br>
@@ -245,7 +261,7 @@
         <option value="1">Structure A CU= 1.5CM + 1.7CV or CU= 1.6CS</option>
         <option value="2">Structure B CU= 1.3CM + 1.5CV or CU= 1.4CS</option>
       </select>
-      
+
 
 
       <br>
@@ -289,14 +305,14 @@
       <select id="tipoMonolitica" onchange="cargarCoeficientesingles()">
         <option value="0">Select </option>
         <option value="1">Yes</option>
-        <option value="2">No</option>        
+        <option value="2">No</option>
       </select>
       <br>
       <label for="perfil">Coefficients for 2020 or 2023?:</label>
       <select id="tipoReglamento" onchange="cargarCoeficientesingles()">
         <option value="0">Select </option>
         <option value="1">2020</option>
-        <option value="2">2023</option>        
+        <option value="2">2023</option>
       </select>
 
       <br><br>
@@ -309,7 +325,7 @@
         <div class="col-md-12">
           <label for="txtDec_resultados" id="labelResultado">___</label>
         </div>
-        
+
       </div>
 
       <div class="centered-table">
@@ -340,7 +356,7 @@
                 <tr>
                   <td id="momento1"></td>
                   <td id="claro1">Short</td>
-                  <td ><input type="number"id="coeficiente1" readonly></td>
+                  <td><input type="number" id="coeficiente1" readonly></td>
                   <td id="q1"></td>
                   <td id="ro1"></td>
                   <td id="As1"></td>
@@ -349,7 +365,7 @@
                 <tr>
                   <td id="momento2"></td>
                   <td id="claro2">Long</td>
-                  <td ><input type="number"id="coeficiente2" readonly></td>
+                  <td><input type="number" id="coeficiente2" readonly></td>
                   <td id="q2"></td>
                   <td id="ro2"></td>
                   <td id="As2"></td>
@@ -358,7 +374,7 @@
                 <tr>
                   <td id="momento3"></td>
                   <td id="claro3">Short</td>
-                  <td ><input type="number"id="coeficiente3" readonly></td>
+                  <td><input type="number" id="coeficiente3" readonly></td>
                   <td id="q3"></td>
                   <td id="ro3"></td>
                   <td id="As3"></td>
@@ -367,7 +383,7 @@
                 <tr>
                   <td id="momento4"></td>
                   <td id="claro4">Long</td>
-                  <td ><input type="number"id="coeficiente4" readonly></td>
+                  <td><input type="number" id="coeficiente4" readonly></td>
                   <td id="q4"></td>
                   <td id="ro4"></td>
                   <td id="As4"></td>
@@ -376,7 +392,7 @@
                 <tr>
                   <td id="momento5"></td>
                   <td id="claro5">Short</td>
-                  <td ><input type="number"id="coeficiente5" readonly></td>
+                  <td><input type="number" id="coeficiente5" readonly></td>
                   <td id="q5"></td>
                   <td id="ro5"></td>
                   <td id="As5"></td>
@@ -385,7 +401,7 @@
                 <tr>
                   <td id="momento6"></td>
                   <td id="claro6">Long</td>
-                  <td ><input type="number"id="coeficiente6" readonly></td>
+                  <td><input type="number" id="coeficiente6" readonly></td>
                   <td id="q6"></td>
                   <td id="ro6"></td>
                   <td id="As6"></td>
@@ -398,7 +414,7 @@
       </div>
 
 
-      
+
 
       <div class="container-fluid">
         <div class="row">
@@ -414,7 +430,7 @@
     </div>
 
   </div>
-  
+
 
   <div class="text-center">
     <p>Press Ctrl+p or press PDF</p>
@@ -425,6 +441,24 @@
     <button id="botonFormularios" class="btn btn-theme mt-3 wow fadeInUp ml-1">Forms</button>
   </div>
 
+
+  <!-- Contenedor del anuncio -->
+  <div id="ad-container">
+    <!-- Código del anuncio de Google AdSense -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4671466113771979" data-ad-format="auto"></ins>
+  </div>
+
+  <!-- Mensaje si hay un bloqueador de anuncios -->
+  <div id="adblock-message">
+    <div>
+      <h2>The use of ad blockers is not allowed on this website</h2>
+      <p>
+        This page is free, so we rely solely on advertising to generate revenue.
+        Please disable your ad blocker. Reload the page if you have already disabled it.
+      </p>
+    </div>
+  </div>
+  <script src="../assets/js/bloqueo.js"></script>
 
 
 
@@ -522,7 +556,7 @@
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
 
-  
+
 </body>
 
 </html>

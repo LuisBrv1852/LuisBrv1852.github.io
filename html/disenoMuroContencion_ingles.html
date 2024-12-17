@@ -29,12 +29,17 @@
 
   <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
 
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/bloq.css">
+
+
   <!--Codigo para anuncios-->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
     crossorigin="anonymous"></script>
   <!--Codigo para anuncios-->
 
-  
+
   <style>
     .centered-table .row {
       display: flex;
@@ -61,59 +66,65 @@
     }
   </style>
 
-<style>
-  @media print {
-    body * {
-      visibility: hidden;
-    }
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
 
-    #about,
-    #about * {
-      visibility: visible;
-    }
+      #about,
+      #about * {
+        visibility: visible;
+      }
 
-    #about {
-      position: absolute;
-      left: 0;
-      top: 0;
+      #about {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
     }
-  }
-</style>
+  </style>
 
-  
- <style>
-  @media print {
-    body * {
-      visibility: hidden;
-    }
 
-    #about,
-    #about * {
-      visibility: visible;
-    }
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
 
-    #about {
-      position: absolute;
-      left: 0;
-      top: 0;
+      #about,
+      #about * {
+        visibility: visible;
+      }
+
+      #about {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
     }
-  }
-</style>
-<style>
-  /* Estilo para centrar las imágenes en el contenedor */
-  .image-container {
+  </style>
+  <style>
+    /* Estilo para centrar las imágenes en el contenedor */
+    .image-container {
       display: flex;
-      justify-content: center;  /* Centra las imágenes horizontalmente */
-      align-items: center;  /* Alinea las imágenes verticalmente (si es necesario) */
-      flex-direction: column; /* Para apilar las imágenes una debajo de la otra */
-      margin-bottom: 20px; /* Espacio entre las imágenes si es necesario */
-  }
+      justify-content: center;
+      /* Centra las imágenes horizontalmente */
+      align-items: center;
+      /* Alinea las imágenes verticalmente (si es necesario) */
+      flex-direction: column;
+      /* Para apilar las imágenes una debajo de la otra */
+      margin-bottom: 20px;
+      /* Espacio entre las imágenes si es necesario */
+    }
 
-  img {
-      max-width: 100%;  /* Esto asegura que las imágenes no excedan el ancho del contenedor */
-      height: auto;  /* Mantiene la proporción de las imágenes */
-  }
-</style>
+    img {
+      max-width: 100%;
+      /* Esto asegura que las imágenes no excedan el ancho del contenedor */
+      height: auto;
+      /* Mantiene la proporción de las imágenes */
+    }
+  </style>
 
 </head>
 
@@ -189,6 +200,17 @@
     <div class="floating-button"><span class="ti-mouse"></span></div>
   </div>
 
+  <!--Codigo para mostrar tutorial-->
+  <div class="video-container vg-page portfolio" id="tutorial">
+    <h4 class="text-center">Tutorial</h4>
+
+    <iframe src="https://www.youtube.com/embed/rDszuaGgTuw?si=1VmmY9rjDkrXJjJr" title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+
   <div class="vg-page page-about" id="about">
     <h1 class="text-center">Retaining wall design</h1>
     <h4 class="text-center">Fill in all the blanks</h4>
@@ -198,17 +220,17 @@
       <input type="text" id="nombreProy" class="form-control" placeholder="Enter the project name">
       <label for="TextNum_num_trabe">Wall numbero:</label>
       <input type="number" id="numTrabe" class="form-control" placeholder="Enter wall number">
-      
+
       <label for="perfil">Select a type of wall:</label>
       <select id="tipoMuro">
         <option value="0">Select</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
       </select>
-      <br>  
+      <br>
       <div class="image-container">
         <img id="image1" src="/assets/img/muroContencion.png" alt="">
-    </div><br>
+      </div><br>
       <label for="perfil">Select the type of material:</label>
       <select id="tipoMaterial">
         <option value="0">Select</option>
@@ -233,7 +255,8 @@
         </div>
         <div class="col-md-6">
           <label for="txtDec_r">Covering (r):</label>
-          <input type="number" id="r" class="form-control" placeholder="Covering in cm,This value is not filled if the material is Masonry" >
+          <input type="number" id="r" class="form-control"
+            placeholder="Covering in cm,This value is not filled if the material is Masonry">
         </div>
       </div>
 
@@ -248,7 +271,7 @@
         </div>
       </div>
 
-      <div class="row">        
+      <div class="row">
         <div class="col-md-6">
           <label for="txtDec_DadoY">Length 1 (L1):</label>
           <input type="number" id="L1" class="form-control" placeholder=" L1 in m">
@@ -266,18 +289,21 @@
         </div>
         <div class="col-md-6">
           <label for="txtDec_dadoX">Length 5 (L5):</label>
-          <input type="number" id="L5" class="form-control" placeholder="L5 in m, This value is not populated for option 1">
+          <input type="number" id="L5" class="form-control"
+            placeholder="L5 in m, This value is not populated for option 1">
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-6">
           <label for="txtDec_f1c">f'c:</label>
-          <input type="number" id="f1c" class="form-control" placeholder="f'c in kg/cm2,This value is not filled if the material is Masonry">
+          <input type="number" id="f1c" class="form-control"
+            placeholder="f'c in kg/cm2,This value is not filled if the material is Masonry">
         </div>
         <div class="col-md-6">
           <label for="txtDec_fy">fy:</label>
-          <input type="number" id="fy" class="form-control" placeholder="fy in kg/cm2,This value is not filled if the material is Masonry">
+          <input type="number" id="fy" class="form-control"
+            placeholder="fy in kg/cm2,This value is not filled if the material is Masonry">
         </div>
       </div>
 
@@ -308,7 +334,7 @@
           <input type="number" id="AnguloFriccion1" class="form-control" placeholder="Φ°">
         </div>
       </div>
-      
+
 
       <br>
       <h5>Soil data</h5><br>
@@ -345,21 +371,25 @@
       <div class="row">
         <div class="col-md-6">
           <label for="txtDec_VarillaFelxion">For curtain flexion using rod number:</label>
-          <input type="number" id="varillaFlexion1" class="form-control" placeholder="3 to 8,This value is not filled if the material is Masonry">
+          <input type="number" id="varillaFlexion1" class="form-control"
+            placeholder="3 to 8,This value is not filled if the material is Masonry">
         </div>
         <div class="col-md-6">
           <label for="txtDec_VarillaFelxion">For standing flexion using rod number:</label>
-          <input type="number" id="varillaFlexion2" class="form-control" placeholder="3 to 8,This value is not filled if the material is Masonry">
+          <input type="number" id="varillaFlexion2" class="form-control"
+            placeholder="3 to 8,This value is not filled if the material is Masonry">
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
           <label for="txtDec_VarillaFelxion">For heel flexion using rod number:</label>
-          <input type="number" id="varillaFlexion3" class="form-control" placeholder="3 to 8,This value is not filled if the material is Masonry">
+          <input type="number" id="varillaFlexion3" class="form-control"
+            placeholder="3 to 8,This value is not filled if the material is Masonry">
         </div>
         <div class="col-md-6">
           <label for="txtDec_VarillaTemperatura">For temperature using number rod:</label>
-          <input type="number" id="varillaTemperatura" class="form-control" placeholder="3 to 8,This value is not filled if the material is Masonry">
+          <input type="number" id="varillaTemperatura" class="form-control"
+            placeholder="3 to 8,This value is not filled if the material is Masonry">
         </div>
       </div>
 
@@ -378,335 +408,354 @@
         </div>
       </div>
 
-      
+
       <div class="image-container">
         <img id="image2" src="/assets/img/muroContencionAreas.png" alt=""><br><br><br>
 
 
-      <h4>Flip Check Table</h4><br>
-      <div class="centered-table">
-        <div class="row">
-          <div class="col-md-12">
-            <table>
-              <thead>
-                <tr>
-                  <th>Figure</th>
-                  <th>Density</th>
-                  <th>Area</th>
-                  <th>W</th>
-                  <th>X</th>
-                  <th>Mr</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td>Ton/m3</td>
-                  <td>m2</td>
-                  <td>Ton</td>
-                  <td>m</td>
-                  <td>Ton-m</td>
-                </tr>
+        <h4>Flip Check Table</h4><br>
+        <div class="centered-table">
+          <div class="row">
+            <div class="col-md-12">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Figure</th>
+                    <th>Density</th>
+                    <th>Area</th>
+                    <th>W</th>
+                    <th>X</th>
+                    <th>Mr</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>Ton/m3</td>
+                    <td>m2</td>
+                    <td>Ton</td>
+                    <td>m</td>
+                    <td>Ton-m</td>
+                  </tr>
 
-                <tr>
-                  <td id="Figura1">1</td>
-                  <td id="Densidad1"></td>
-                  <td id="Area1"></td>
-                  <td id="Peso1"></td>
-                  <td id="Centro1"></td>
-                  <td id="MR1"></td>
-                </tr>
+                  <tr>
+                    <td id="Figura1">1</td>
+                    <td id="Densidad1"></td>
+                    <td id="Area1"></td>
+                    <td id="Peso1"></td>
+                    <td id="Centro1"></td>
+                    <td id="MR1"></td>
+                  </tr>
 
-                <tr>
-                  <td id="Figura2">2</td>
-                  <td id="Densidad2"></td>
-                  <td id="Area2"></td>
-                  <td id="Peso2"></td>
-                  <td id="Centro2"></td>
-                  <td id="MR2"></td>
-                </tr>
+                  <tr>
+                    <td id="Figura2">2</td>
+                    <td id="Densidad2"></td>
+                    <td id="Area2"></td>
+                    <td id="Peso2"></td>
+                    <td id="Centro2"></td>
+                    <td id="MR2"></td>
+                  </tr>
 
-                <tr>
-                  <td id="Figura3">3</td>
-                  <td id="Densidad3"></td>
-                  <td id="Area3"></td>
-                  <td id="Peso3"></td>
-                  <td id="Centro3"></td>
-                  <td id="MR3"></td>
-                </tr>
+                  <tr>
+                    <td id="Figura3">3</td>
+                    <td id="Densidad3"></td>
+                    <td id="Area3"></td>
+                    <td id="Peso3"></td>
+                    <td id="Centro3"></td>
+                    <td id="MR3"></td>
+                  </tr>
 
-                <tr>
-                  <td id="Figura4">4</td>
-                  <td id="Densidad4"></td>
-                  <td id="Area4"></td>
-                  <td id="Peso4"></td>
-                  <td id="Centro4"></td>
-                  <td id="MR4"></td>
-                </tr>
+                  <tr>
+                    <td id="Figura4">4</td>
+                    <td id="Densidad4"></td>
+                    <td id="Area4"></td>
+                    <td id="Peso4"></td>
+                    <td id="Centro4"></td>
+                    <td id="MR4"></td>
+                  </tr>
 
-                <tr>
-                  <td id="Figura5">5</td>
-                  <td id="Densidad5"></td>
-                  <td id="Area5"></td>
-                  <td id="Peso5"></td>
-                  <td id="Centro5"></td>
-                  <td id="MR5"></td>
-                </tr>
+                  <tr>
+                    <td id="Figura5">5</td>
+                    <td id="Densidad5"></td>
+                    <td id="Area5"></td>
+                    <td id="Peso5"></td>
+                    <td id="Centro5"></td>
+                    <td id="MR5"></td>
+                  </tr>
 
-                <tr>
-                  <td id="Figura6">6</td>
-                  <td id="Densidad6"></td>
-                  <td id="Area6"></td>
-                  <td id="Peso6"></td>
-                  <td id="Centro6"></td>
-                  <td id="MR6"></td>
-                </tr>
-
-
-                <tr>
-                  <td id="Figura7">7</td>
-                  <td id="Densidad7"></td>
-                  <td id="Area7"></td>
-                  <td id="Peso7"></td>
-                  <td id="Centro7"></td>
-                  <td id="MR7"></td>
-                </tr>
+                  <tr>
+                    <td id="Figura6">6</td>
+                    <td id="Densidad6"></td>
+                    <td id="Area6"></td>
+                    <td id="Peso6"></td>
+                    <td id="Centro6"></td>
+                    <td id="MR6"></td>
+                  </tr>
 
 
-                <tr>
-                  <td id="Pv">Pv</td>
-                  <td id="Densidad8"></td>
-                  <td id="Area8"></td>
-                  <td id="Peso8"></td>
-                  <td id="Centro8"></td>
-                  <td id="MR8"></td>
-                </tr>
-
-                <tr></tr>
-                <td id="Ps">Ps</td>
-                <td id="Densidad9"></td>
-                <td id="Area9"></td>
-                <td id="Peso9"></td>
-                <td id="Centro9"></td>
-                <td id="MR9"></td>
-                </tr>
+                  <tr>
+                    <td id="Figura7">7</td>
+                    <td id="Densidad7"></td>
+                    <td id="Area7"></td>
+                    <td id="Peso7"></td>
+                    <td id="Centro7"></td>
+                    <td id="MR7"></td>
+                  </tr>
 
 
-                <tr>
-                  <td id="Total">Total</td>
-                  <td id="Densidad10"></td>
-                  <td id="Area10"></td>
-                  <td id="Peso10"></td>
-                  <td id="Centro10"></td>
-                  <td id="MR10"></td>
-                </tr>
+                  <tr>
+                    <td id="Pv">Pv</td>
+                    <td id="Densidad8"></td>
+                    <td id="Area8"></td>
+                    <td id="Peso8"></td>
+                    <td id="Centro8"></td>
+                    <td id="MR8"></td>
+                  </tr>
 
-              </tbody>
-            </table>
+                  <tr></tr>
+                  <td id="Ps">Ps</td>
+                  <td id="Densidad9"></td>
+                  <td id="Area9"></td>
+                  <td id="Peso9"></td>
+                  <td id="Centro9"></td>
+                  <td id="MR9"></td>
+                  </tr>
+
+
+                  <tr>
+                    <td id="Total">Total</td>
+                    <td id="Densidad10"></td>
+                    <td id="Area10"></td>
+                    <td id="Peso10"></td>
+                    <td id="Centro10"></td>
+                    <td id="MR10"></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      </div>
-    
 
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <label for="txtDec_resultados" id="labelResultados2">___</label>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <label for="txtDec_resultados" id="labelResultados2">___</label>
+            </div>
           </div>
         </div>
-      </div>
-      <br>
+        <br>
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <label for="txtDec_resultados" id="labelResultados3">___</label>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <label for="txtDec_resultados" id="labelResultados3">___</label>
+            </div>
           </div>
         </div>
-      </div>
-      <br>
+        <br>
 
-      <div class="image-container">
-        <img id="image3" src="/assets/img/muroContencionArmado.png" alt="">
-    </div><br>
+        <div class="image-container">
+          <img id="image3" src="/assets/img/muroContencionArmado.png" alt="">
+        </div><br>
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <label for="txtDec_resultados" id="labelResultados4">___</label>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <label for="txtDec_resultados" id="labelResultados4">___</label>
+            </div>
           </div>
         </div>
+        <br>
+
+
+
       </div>
-      <br>
-
-
 
     </div>
 
-  </div>
-  
-  <div class="text-center">
-    <p>Press Ctrl+p or press PDF</p>
-    <p>To save the results as PDF, select the "PDF" option in the print window.</p>
-    <p>It is recommended to place the option of none in margin .</p>
-    <button id="printButton" class="btn btn-theme mt-3 wow fadeInUp ml-1">PDF</button><br><br><br><br><br><br>
-    <p>You can download the form from here .</p>
-    <button id="botonFormularios" class="btn btn-theme mt-3 wow fadeInUp ml-1">Forms</button>
-  </div>
+    <div class="text-center">
+      <p>Press Ctrl+p or press PDF</p>
+      <p>To save the results as PDF, select the "PDF" option in the print window.</p>
+      <p>It is recommended to place the option of none in margin .</p>
+      <button id="printButton" class="btn btn-theme mt-3 wow fadeInUp ml-1">PDF</button><br><br><br><br><br><br>
+      <p>You can download the form from here .</p>
+      <button id="botonFormularios" class="btn btn-theme mt-3 wow fadeInUp ml-1">Forms</button>
+    </div>
+
+    <!-- Contenedor del anuncio -->
+    <div id="ad-container">
+      <!-- Código del anuncio de Google AdSense -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4671466113771979"
+        data-ad-format="auto"></ins>
+    </div>
+
+    <!-- Mensaje si hay un bloqueador de anuncios -->
+    <div id="adblock-message">
+      <div>
+        <h2>The use of ad blockers is not allowed on this website</h2>
+        <p>
+          This page is free, so we rely solely on advertising to generate revenue.
+          Please disable your ad blocker. Reload the page if you have already disabled it.
+        </p>
+      </div>
+    </div>
+    <script src="../assets/js/bloqueo.js"></script>
 
 
 
 
 
-  <!-- Footer -->
-  <div class="vg-footer" id="footer">
-    <h1 class="text-center">Contact</h1>
-    <div class="container">
-      <div class="row">
-        <!--<div class="col-lg-4 py-3">
+    <!-- Footer -->
+    <div class="vg-footer" id="footer">
+      <h1 class="text-center">Contact</h1>
+      <div class="container">
+        <div class="row">
+          <!--<div class="col-lg-4 py-3">
           <div class="footer-info">
             <p>Where to find me</p>
             <hr class="divider">
             <p class="fs-large fg-white">1600 Amphitheatre Parkway Mountain View, California 94043 US</p>
           </div>
         </div>-->
-        <div class="col-md-6 col-lg-3 py-3 mx-auto">
-          <div class="float-lg-right">
-            <p>Follow us</p>
-            <hr class="divider">
-            <ul class="list-unstyled">
-              <li><a href="https://wa.me/527712971094" target="_blank">Whatsapp</a></li>
-              <li><a href="https://www.facebook.com/profile.php?id=100077227445150">Facebook</a></li>
+          <div class="col-md-6 col-lg-3 py-3 mx-auto">
+            <div class="float-lg-right">
+              <p>Follow us</p>
+              <hr class="divider">
+              <ul class="list-unstyled">
+                <li><a href="https://wa.me/527712971094" target="_blank">Whatsapp</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100077227445150">Facebook</a></li>
 
-              <li><a href="https://www.youtube.com/channel/UCEhb95enG44t7-apspFExog">Youtube</a></li>
-            </ul>
+                <li><a href="https://www.youtube.com/channel/UCEhb95enG44t7-apspFExog">Youtube</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 py-3 mx-auto">
+            <div class="float-lg-right">
+              <p>Contact us</p>
+              <hr class="divider">
+              <ul class="list-unstyled">
+                <li>engineeringcode.17@gmail.com</li>
+                <li>+52 771 297 1094</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 py-3 mx-auto">
-          <div class="float-lg-right">
-            <p>Contact us</p>
-            <hr class="divider">
-            <ul class="list-unstyled">
-              <li>engineeringcode.17@gmail.com</li>
-              <li>+52 771 297 1094</li>
-            </ul>
+        <div class="row">
+
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="col-12">
+            <p class="text-center mb-0 mt-4">Copyright &copy;2024. All rigths reerved <a
+                href="https://www.macodeid.com/"></a></p>
           </div>
         </div>
       </div>
-      <div class="row">
+    </div> <!-- End footer -->
 
-      </div>
-      <div class="row justify-content-center mt-3">
-        <div class="col-12">
-          <p class="text-center mb-0 mt-4">Copyright &copy;2024. All rigths reerved <a
-              href="https://www.macodeid.com/"></a></p>
-        </div>
-      </div>
-    </div>
-  </div> <!-- End footer -->
+    <script>
+      const tipoMuro = document.getElementById('tipoMuro');
+      const tipoMaterial = document.getElementById('tipoMaterial');
+      const image1 = document.getElementById('image1');
+      const image2 = document.getElementById('image2');
+      const image3 = document.getElementById('image3');
+      const calcularBtn = document.getElementById('btnRevisar'); // Supongo que este es el botón de calcular
 
-  <script>
-    const tipoMuro = document.getElementById('tipoMuro');
-    const tipoMaterial = document.getElementById('tipoMaterial');
-    const image1 = document.getElementById('image1');
-    const image2 = document.getElementById('image2');
-    const image3 = document.getElementById('image3');
-    const calcularBtn = document.getElementById('btnRevisar'); // Supongo que este es el botón de calcular
-
-    tipoMuro.addEventListener('change', function () {
+      tipoMuro.addEventListener('change', function () {
         const selectedValue = this.value;
 
         if (selectedValue == 1) { // Concreto
-            image1.src = '/assets/img/muroContencion.png';
-            image2.src = '/assets/img/muroContencionAreas.png';
-            image3.src = '/assets/img/muroContencionArmado.png';
+          image1.src = '/assets/img/muroContencion.png';
+          image2.src = '/assets/img/muroContencionAreas.png';
+          image3.src = '/assets/img/muroContencionArmado.png';
         } else if (selectedValue == 2) { // Mampostería
-            image1.src = '/assets/img/muroContencion2.png';
-            image2.src = '/assets/img/muroContencionAreas2.png';
-            image3.src = '/assets/img/muroContencionArmado2.png';
+          image1.src = '/assets/img/muroContencion2.png';
+          image2.src = '/assets/img/muroContencionAreas2.png';
+          image3.src = '/assets/img/muroContencionArmado2.png';
         } else { // Opción por defecto o "Selecciona"
-            image1.src = '/assets/img/muroContencion.png';
-            image2.src = '/assets/img/muroContencionAreas.png';
-            image3.src = '/assets/img/muroContencionArmado.png';
+          image1.src = '/assets/img/muroContencion.png';
+          image2.src = '/assets/img/muroContencionAreas.png';
+          image3.src = '/assets/img/muroContencionArmado.png';
         }
 
         // Verificar tipoMaterial para ocultar la tercera imagen si es necesario
         if (tipoMaterial.value == 2) {
-            image3.style.display = 'none';
+          image3.style.display = 'none';
         } else {
-            image3.style.display = 'block';
+          image3.style.display = 'block';
         }
-    });
+      });
 
-    tipoMaterial.addEventListener('change', function () {
+      tipoMaterial.addEventListener('change', function () {
         const selectedValueMaterial = this.value;
 
         if (selectedValueMaterial == 2) { // Si tipoMaterial es "Mampostería", ocultamos image3
-            image3.style.display = 'none';
+          image3.style.display = 'none';
         } else { // Si no es mampostería, mostramos image3
-            image3.style.display = 'block';
+          image3.style.display = 'block';
         }
-    });
+      });
 
-    // Evento del botón "Calcular"
-    calcularBtn.addEventListener('click', function() {
+      // Evento del botón "Calcular"
+      calcularBtn.addEventListener('click', function () {
         // Verificar nuevamente el valor de tipoMaterial cuando se presiona el botón Calcular
         if (tipoMaterial.value == 2) {
-            image3.style.display = 'none';
+          image3.style.display = 'none';
         } else {
-            image3.style.display = 'block';
+          image3.style.display = 'block';
         }
 
         // Aquí puedes poner el código adicional que ocurre al calcular...
-    });
-</script>
+      });
+    </script>
 
 
-  <script src="../assets/js/disenoMuroContencion.obfuscated.js"></script>
+    <script src="../assets/js/disenoMuroContencion.obfuscated.js"></script>
 
-  <script src="../assets/js/jquery-3.5.1.min.js"></script>
+    <script src="../assets/js/jquery-3.5.1.min.js"></script>
 
-  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
-  <script src="../assets/vendor/owl-carousel/owl.carousel.min.js"></script>
+    <script src="../assets/vendor/owl-carousel/owl.carousel.min.js"></script>
 
 
-  <script src="../assets/vendor/isotope/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/isotope/isotope.pkgd.min.js"></script>
 
-  <script src="../assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="../assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
 
-  <script src="../assets/vendor/fancybox/js/jquery.fancybox.min.js"></script>
+    <script src="../assets/vendor/fancybox/js/jquery.fancybox.min.js"></script>
 
-  <script src="../assets/vendor/wow/wow.min.js"></script>
+    <script src="../assets/vendor/wow/wow.min.js"></script>
 
-  <script src="../assets/vendor/animateNumber/jquery.animateNumber.min.js"></script>
+    <script src="../assets/vendor/animateNumber/jquery.animateNumber.min.js"></script>
 
-  <script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
 
-  <script src="../assets/js/google-maps.js"></script>
+    <script src="../assets/js/google-maps.js"></script>
 
-  <script src="../assets/js/topbar-virtual.js"></script>
+    <script src="../assets/js/topbar-virtual.js"></script>
 
-  <script>
-    document.addEventListener('keydown', function (event) {
-      if (event.ctrlKey && event.key === 'p') {
-        event.preventDefault();
+    <script>
+      document.addEventListener('keydown', function (event) {
+        if (event.ctrlKey && event.key === 'p') {
+          event.preventDefault();
+          window.print();
+        }
+      });
+
+      document.getElementById('printButton').addEventListener('click', function () {
         window.print();
-      }
-    });
+      });
 
-    document.getElementById('printButton').addEventListener('click', function () {
-      window.print();
-    });
+      document.getElementById('botonFormularios').addEventListener('click', function () {
+        window.open('https://drive.google.com/drive/folders/1pQ6MAOgFHui3Z7guFGWInFzmBC38wVzW?usp=sharing', '_blank');
+      });
+    </script>
 
-    document.getElementById('botonFormularios').addEventListener('click', function () {
-      window.open('https://drive.google.com/drive/folders/1pQ6MAOgFHui3Z7guFGWInFzmBC38wVzW?usp=sharing', '_blank');
-    });
-  </script>
-
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
 
 </body>
 

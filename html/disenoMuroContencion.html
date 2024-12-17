@@ -29,6 +29,11 @@
 
   <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
 
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/bloq.css">
+
+
   <!--Codigo para anuncios-->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
     crossorigin="anonymous"></script>
@@ -100,21 +105,27 @@
     }
   </style>
 
-<style>
-  /* Estilo para centrar las imágenes en el contenedor */
-  .image-container {
+  <style>
+    /* Estilo para centrar las imágenes en el contenedor */
+    .image-container {
       display: flex;
-      justify-content: center;  /* Centra las imágenes horizontalmente */
-      align-items: center;  /* Alinea las imágenes verticalmente (si es necesario) */
-      flex-direction: column; /* Para apilar las imágenes una debajo de la otra */
-      margin-bottom: 20px; /* Espacio entre las imágenes si es necesario */
-  }
+      justify-content: center;
+      /* Centra las imágenes horizontalmente */
+      align-items: center;
+      /* Alinea las imágenes verticalmente (si es necesario) */
+      flex-direction: column;
+      /* Para apilar las imágenes una debajo de la otra */
+      margin-bottom: 20px;
+      /* Espacio entre las imágenes si es necesario */
+    }
 
-  img {
-      max-width: 100%;  /* Esto asegura que las imágenes no excedan el ancho del contenedor */
-      height: auto;  /* Mantiene la proporción de las imágenes */
-  }
-</style>
+    img {
+      max-width: 100%;
+      /* Esto asegura que las imágenes no excedan el ancho del contenedor */
+      height: auto;
+      /* Mantiene la proporción de las imágenes */
+    }
+  </style>
 
 
 
@@ -192,6 +203,18 @@
     <div class="floating-button"><span class="ti-mouse"></span></div>
   </div>
 
+  <!--Codigo para mostrar tutorial-->
+  <div class="video-container vg-page portfolio" id="tutorial">
+    <h4 class="text-center">Tutorial</h4>
+
+    <iframe src="https://www.youtube.com/embed/rDszuaGgTuw?si=1VmmY9rjDkrXJjJr" title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+
+
   <div class="vg-page page-about" id="about">
     <h1 class="text-center">Diseño de Muro de Contención</h1>
     <h4 class="text-center">Llena todos los espacios en blanco</h4>
@@ -209,7 +232,7 @@
       </select><br>
       <div class="image-container">
         <img id="image1" src="/assets/img/muroContencion.png" alt="">
-    </div>
+      </div>
       <br>
       <label for="perfil">Selecciona el tipo de material:</label>
       <select id="tipoMaterial">
@@ -390,7 +413,7 @@
 
       <div class="image-container">
         <img id="image2" src="/assets/img/muroContencionAreas.png" alt="">
-    </div><br><br><br>
+      </div><br><br><br>
 
 
       <h4>Tabla de revisión por volteo</h4><br>
@@ -537,7 +560,7 @@
 
       <div class="image-container">
         <img id="image3" src="/assets/img/muroContencionArmado.png" alt="">
-    </div><br>
+      </div><br>
 
       <div class="container-fluid">
         <div class="row">
@@ -561,6 +584,24 @@
     <p>Puedes descargar el formulario desde aqui .</p>
     <button id="botonFormularios" class="btn btn-theme mt-3 wow fadeInUp ml-1">Formularios</button>
   </div>
+
+  <!-- Contenedor del anuncio -->
+  <div id="ad-container">
+    <!-- Código del anuncio de Google AdSense -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4671466113771979" data-ad-format="auto"></ins>
+  </div>
+
+  <!-- Mensaje si hay un bloqueador de anuncios -->
+  <div id="adblock-message">
+    <div>
+      <h2>El uso de bloqueadores de anuncios no está permitido en este sitio web</h2>
+      <p>
+        Esta página es gratuita, así que dependemos únicamente de la publicidad para generar ganancias.
+        Por favor, desactiva tu bloqueador de anuncios.Recarga la página si ya los has desactivado.
+      </p>
+    </div>
+  </div>
+  <script src="../assets/js/bloqueo.js"></script>
 
 
 
@@ -621,52 +662,52 @@
     const calcularBtn = document.getElementById('btnRevisar'); // Supongo que este es el botón de calcular
 
     tipoMuro.addEventListener('change', function () {
-        const selectedValue = this.value;
+      const selectedValue = this.value;
 
-        if (selectedValue == 1) { // Concreto
-            image1.src = '/assets/img/muroContencion.png';
-            image2.src = '/assets/img/muroContencionAreas.png';
-            image3.src = '/assets/img/muroContencionArmado.png';
-        } else if (selectedValue == 2) { // Mampostería
-            image1.src = '/assets/img/muroContencion2.png';
-            image2.src = '/assets/img/muroContencionAreas2.png';
-            image3.src = '/assets/img/muroContencionArmado2.png';
-        } else { // Opción por defecto o "Selecciona"
-            image1.src = '/assets/img/muroContencion.png';
-            image2.src = '/assets/img/muroContencionAreas.png';
-            image3.src = '/assets/img/muroContencionArmado.png';
-        }
+      if (selectedValue == 1) { // Concreto
+        image1.src = '/assets/img/muroContencion.png';
+        image2.src = '/assets/img/muroContencionAreas.png';
+        image3.src = '/assets/img/muroContencionArmado.png';
+      } else if (selectedValue == 2) { // Mampostería
+        image1.src = '/assets/img/muroContencion2.png';
+        image2.src = '/assets/img/muroContencionAreas2.png';
+        image3.src = '/assets/img/muroContencionArmado2.png';
+      } else { // Opción por defecto o "Selecciona"
+        image1.src = '/assets/img/muroContencion.png';
+        image2.src = '/assets/img/muroContencionAreas.png';
+        image3.src = '/assets/img/muroContencionArmado.png';
+      }
 
-        // Verificar tipoMaterial para ocultar la tercera imagen si es necesario
-        if (tipoMaterial.value == 2) {
-            image3.style.display = 'none';
-        } else {
-            image3.style.display = 'block';
-        }
+      // Verificar tipoMaterial para ocultar la tercera imagen si es necesario
+      if (tipoMaterial.value == 2) {
+        image3.style.display = 'none';
+      } else {
+        image3.style.display = 'block';
+      }
     });
 
     tipoMaterial.addEventListener('change', function () {
-        const selectedValueMaterial = this.value;
+      const selectedValueMaterial = this.value;
 
-        if (selectedValueMaterial == 2) { // Si tipoMaterial es "Mampostería", ocultamos image3
-            image3.style.display = 'none';
-        } else { // Si no es mampostería, mostramos image3
-            image3.style.display = 'block';
-        }
+      if (selectedValueMaterial == 2) { // Si tipoMaterial es "Mampostería", ocultamos image3
+        image3.style.display = 'none';
+      } else { // Si no es mampostería, mostramos image3
+        image3.style.display = 'block';
+      }
     });
 
     // Evento del botón "Calcular"
-    calcularBtn.addEventListener('click', function() {
-        // Verificar nuevamente el valor de tipoMaterial cuando se presiona el botón Calcular
-        if (tipoMaterial.value == 2) {
-            image3.style.display = 'none';
-        } else {
-            image3.style.display = 'block';
-        }
+    calcularBtn.addEventListener('click', function () {
+      // Verificar nuevamente el valor de tipoMaterial cuando se presiona el botón Calcular
+      if (tipoMaterial.value == 2) {
+        image3.style.display = 'none';
+      } else {
+        image3.style.display = 'block';
+      }
 
-        // Aquí puedes poner el código adicional que ocurre al calcular...
+      // Aquí puedes poner el código adicional que ocurre al calcular...
     });
-</script>
+  </script>
 
 
 

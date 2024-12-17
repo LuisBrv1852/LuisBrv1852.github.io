@@ -29,6 +29,11 @@
 
   <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
 
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/bloq.css">
+
+
   <!--Codigo para anuncios-->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
     crossorigin="anonymous"></script>
@@ -59,24 +64,24 @@
     }
   </style>
 
-<style>
-  @media print {
-    body * {
-      visibility: hidden;
-    }
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
 
-    #about,
-    #about * {
-      visibility: visible;
-    }
+      #about,
+      #about * {
+        visibility: visible;
+      }
 
-    #about {
-      position: absolute;
-      left: 0;
-      top: 0;
+      #about {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
     }
-  }
-</style>
+  </style>
 
 
 </head>
@@ -153,6 +158,18 @@
     <div class="floating-button"><span class="ti-mouse"></span></div>
   </div>
 
+  <!--Codigo para mostrar tutorial-->
+  <div class="video-container vg-page portfolio" id="tutorial">
+    <h4 class="text-center">Tutorial</h4>
+
+    <iframe src="https://www.youtube.com/embed/IIGiYdKvsl0?si=FdBbvK2pz-5QExH6" title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+
+
   <div class="vg-page page-about" id="about">
     <h1 class="text-center">Diseño de Losa Nervada</h1>
     <h4 class="text-center">Llena todos los espacios en blanco</h4>
@@ -161,9 +178,10 @@
       <label for="editText_nombre_proyecto">Nombre del Proyecto:</label>
       <input type="text" id="nombreProy" class="form-control" placeholder="Ingrese el nombre del proyecto">
       <label for="TextNum_num_trabe">Nombre de la losa:</label>
-      <input type="number" id="numTrabe" class="form-control" placeholder="(Sala, Habitacion 1, Cocina, Tablero 1, etc.)">
-    
-      
+      <input type="number" id="numTrabe" class="form-control"
+        placeholder="(Sala, Habitacion 1, Cocina, Tablero 1, etc.)">
+
+
       <br>
       <h5>Dimensiones Losa</h5><br>
       <img src="/assets/img/diagramalosanervada .png" alt=""><br>
@@ -245,7 +263,7 @@
         <option value="1">Estructura A CU= 1.5CM + 1.7CV ó CU= 1.6CS</option>
         <option value="2">Estructura B CU= 1.3CM + 1.5CV ó CU= 1.4CS</option>
       </select>
-      
+
 
 
       <br>
@@ -289,14 +307,14 @@
       <select id="tipoMonolitica" onchange="cargarCoeficientes()">
         <option value="0">Selecciona </option>
         <option value="1">Si</option>
-        <option value="2">No</option>        
+        <option value="2">No</option>
       </select>
       <br>
       <label for="perfil">¿Coeficientes del 2020 ó 2023?:</label>
       <select id="tipoReglamento" onchange="cargarCoeficientes()">
         <option value="0">Selecciona </option>
         <option value="1">2020</option>
-        <option value="2">2023</option>        
+        <option value="2">2023</option>
       </select>
 
       <br><br>
@@ -309,7 +327,7 @@
         <div class="col-md-12">
           <label for="txtDec_resultados" id="labelResultado">___</label>
         </div>
-        
+
       </div>
 
       <div class="centered-table">
@@ -340,7 +358,7 @@
                 <tr>
                   <td id="momento1"></td>
                   <td id="claro1">Corto</td>
-                  <td ><input type="number"id="coeficiente1" readonly></td>
+                  <td><input type="number" id="coeficiente1" readonly></td>
                   <td id="q1"></td>
                   <td id="ro1"></td>
                   <td id="As1"></td>
@@ -349,7 +367,7 @@
                 <tr>
                   <td id="momento2"></td>
                   <td id="claro2">Largo</td>
-                  <td ><input type="number"id="coeficiente2" readonly></td>
+                  <td><input type="number" id="coeficiente2" readonly></td>
                   <td id="q2"></td>
                   <td id="ro2"></td>
                   <td id="As2"></td>
@@ -358,7 +376,7 @@
                 <tr>
                   <td id="momento3"></td>
                   <td id="claro3">Corto</td>
-                  <td ><input type="number"id="coeficiente3" readonly></td>
+                  <td><input type="number" id="coeficiente3" readonly></td>
                   <td id="q3"></td>
                   <td id="ro3"></td>
                   <td id="As3"></td>
@@ -367,7 +385,7 @@
                 <tr>
                   <td id="momento4"></td>
                   <td id="claro4">Largo</td>
-                  <td ><input type="number"id="coeficiente4" readonly></td>
+                  <td><input type="number" id="coeficiente4" readonly></td>
                   <td id="q4"></td>
                   <td id="ro4"></td>
                   <td id="As4"></td>
@@ -376,7 +394,7 @@
                 <tr>
                   <td id="momento5"></td>
                   <td id="claro5">Corto</td>
-                  <td ><input type="number"id="coeficiente5" readonly></td>
+                  <td><input type="number" id="coeficiente5" readonly></td>
                   <td id="q5"></td>
                   <td id="ro5"></td>
                   <td id="As5"></td>
@@ -385,7 +403,7 @@
                 <tr>
                   <td id="momento6"></td>
                   <td id="claro6">Largo</td>
-                  <td ><input type="number"id="coeficiente6" readonly></td>
+                  <td><input type="number" id="coeficiente6" readonly></td>
                   <td id="q6"></td>
                   <td id="ro6"></td>
                   <td id="As6"></td>
@@ -398,7 +416,7 @@
       </div>
 
 
-      
+
 
       <div class="container-fluid">
         <div class="row">
@@ -423,6 +441,25 @@
     <p>Puedes descargar el formulario desde aqui .</p>
     <button id="botonFormularios" class="btn btn-theme mt-3 wow fadeInUp ml-1">Formularios</button>
   </div>
+
+  <!-- Contenedor del anuncio -->
+  <div id="ad-container">
+    <!-- Código del anuncio de Google AdSense -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4671466113771979" data-ad-format="auto"></ins>
+  </div>
+
+  <!-- Mensaje si hay un bloqueador de anuncios -->
+  <div id="adblock-message">
+    <div>
+      <h2>El uso de bloqueadores de anuncios no está permitido en este sitio web</h2>
+      <p>
+        Esta página es gratuita, así que dependemos únicamente de la publicidad para generar ganancias.
+        Por favor, desactiva tu bloqueador de anuncios.Recarga la página si ya los has desactivado.
+      </p>
+    </div>
+  </div>
+  <script src="../assets/js/bloqueo.js"></script>
+
 
 
 

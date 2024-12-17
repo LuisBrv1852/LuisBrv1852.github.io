@@ -29,6 +29,11 @@
 
   <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
 
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/bloq.css">
+
+
   <!--Codigo para anuncios-->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671466113771979"
     crossorigin="anonymous"></script>
@@ -130,6 +135,17 @@
     <div class="floating-button"><span class="ti-mouse"></span></div>
   </div>
 
+  <!--Codigo para mostrar tutorial-->
+  <div class="video-container vg-page portfolio" id="tutorial">
+    <h4 class="text-center">Tutorial</h4>
+
+    <iframe src="https://www.youtube.com/embed/wd7wNcDy-8g?si=5XGeV6Zlqt-u4kJh" title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+
   <div class="vg-page page-about" id="about">
     <h1 class="text-center">Column Design</h1>
     <h4 class="text-center">Fill in all the blanks</h4>
@@ -185,11 +201,13 @@
       <div class="row">
         <div class="col-md-6">
           <label for="txtDec_mumas">Moment around the X axis (MuX):</label>
-          <input type="number" id="Mux" class="form-control" placeholder="Moment around the X axis or parallel to the Y axis in ton-m">
+          <input type="number" id="Mux" class="form-control"
+            placeholder="Moment around the X axis or parallel to the Y axis in ton-m">
         </div>
         <div class="col-md-6">
           <label for="txtDec_mumenos">Moment around the Y axis (MuY):</label>
-          <input type="number" id="Muy" class="form-control" placeholder="Moment around the Y axis or parallel to the X axis in ton-m">
+          <input type="number" id="Muy" class="form-control"
+            placeholder="Moment around the Y axis or parallel to the X axis in ton-m">
         </div>
       </div>
       <div class="row">
@@ -236,7 +254,8 @@
         </div>
       </div>
 
-      <button id="btnRevisar" onclick="revisionColumnaIngles()" class="btn btn-theme mt-3 wow fadeInUp ml-1" target="_blank">Review</button>
+      <button id="btnRevisar" onclick="revisionColumnaIngles()" class="btn btn-theme mt-3 wow fadeInUp ml-1"
+        target="_blank">Review</button>
 
       <br><br><br>
       <h5>Results</h5><br>
@@ -256,7 +275,8 @@
       <div class="col-md-12">
         <div id="graficoPMy" class="mx-auto" style="width:100%;max-width:900px;height:700px;"></div>
       </div>
-      <button id="btnRevisar" onclick="revisionColumnaIngles()" class="btn btn-theme mt-3 wow fadeInUp ml-1" target="_blank">Review</button>
+      <button id="btnRevisar" onclick="revisionColumnaIngles()" class="btn btn-theme mt-3 wow fadeInUp ml-1"
+        target="_blank">Review</button>
       <div class="row">
         <div class="col-md-12">
           <label for="txtDec_resultados" id="labelResultado3">___</label>
@@ -272,16 +292,34 @@
       </div>
       <br>
     </div>
-</div>
+  </div>
 
-<div class="text-center">
-  <p>Press Ctrl+p or press PDF</p>
-  <p>To save the results as PDF, select the "PDF" option in the print window.</p>
-  <p>It is recommended to place the option of none in margin.</p>
-  <button id="printButton" class="btn btn-theme mt-3 wow fadeInUp ml-1">PDF</button><br><br><br><br><br><br>
-  <p>You can download the form from here .</p>
-  <button id="botonFormularios" class="btn btn-theme mt-3 wow fadeInUp ml-1">Forms</button>
-</div>
+  <div class="text-center">
+    <p>Press Ctrl+p or press PDF</p>
+    <p>To save the results as PDF, select the "PDF" option in the print window.</p>
+    <p>It is recommended to place the option of none in margin.</p>
+    <button id="printButton" class="btn btn-theme mt-3 wow fadeInUp ml-1">PDF</button><br><br><br><br><br><br>
+    <p>You can download the form from here .</p>
+    <button id="botonFormularios" class="btn btn-theme mt-3 wow fadeInUp ml-1">Forms</button>
+  </div>
+
+  <!-- Contenedor del anuncio -->
+  <div id="ad-container">
+    <!-- Código del anuncio de Google AdSense -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4671466113771979" data-ad-format="auto"></ins>
+  </div>
+
+  <!-- Mensaje si hay un bloqueador de anuncios -->
+  <div id="adblock-message">
+    <div>
+      <h2>The use of ad blockers is not allowed on this website</h2>
+      <p>
+        This page is free, so we rely solely on advertising to generate revenue.
+        Please disable your ad blocker. Reload the page if you have already disabled it.
+      </p>
+    </div>
+  </div>
+  <script src="../assets/js/bloqueo.js"></script>
 
 
 
@@ -379,7 +417,7 @@
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
 
-  
+
 </body>
 
 </html>
